@@ -31,3 +31,5 @@ make pip-install
 ```sh
 mkdocs serve
 ```
+
+Now open `http://localhost:8000` and the rendered documentation should be visible.

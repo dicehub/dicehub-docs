@@ -18,3 +18,13 @@ pip-compile:
 .PHONY: pip-install
 pip-install:
 	pip install -r requirements/requirements.txt
+
+
+.PHONY: pip-outdated
+pip-outdated:
+	pip list --outdated
+
+
+.PHONY: mkdocs-serve
+mkdocs-serve:
+	mkdocs serve
