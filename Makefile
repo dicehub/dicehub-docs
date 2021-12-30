@@ -28,3 +28,8 @@ pip-outdated:
 .PHONY: mkdocs-serve
 mkdocs-serve:
 	mkdocs serve
+
+
+.PHONY: mkdocs-dirtyreload
+mkdocs-dirtyreload:
+	mkdocs dirtyreload

@@ -1,1 +1,130 @@
-site_name: My Docs
+site_name: dicehub Docs
+site_description: dicehub Documentation
+site_author: dicehub Team
+site_url: https://docs.dicehub.com/
+copyright: 'Copyright &copy; 2022 dicehub'
+
+# Customization
+theme:
+  name: material
+  custom_dir: theme/overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: dicehub
+      primary: white
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  font:
+    # text: Poppins
+    # text: Nunito Sans
+    text: Roboto
+    # code: Roboto Mono
+  logo: assets/logo.svg
+  favicon: 'assets/favicon.png'
+  features:
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.share
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/extra.js
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
+      # enable_creation_date: true
+  - extra-sass
+  - minify:
+      minify_html: true
+  # - redirects:
+  #     redirect_maps:
+  #       'terms.md': 'http://dicehub.com/terms'
+
+extra:
+  # analytics:
+  #   provider: google
+  #   property: G-XXXXXXXXXX
+  # version:
+  #   provider: mike
+  generator: false
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/dicehub
+    - icon: fontawesome/brands/github
+      link: https://github.com/dicehub
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: "#"
+  - tables
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# Site navigation in the side bar
+nav:
+  - Home: index.md
+  - User Guide:
+    - Introduction: getting-started.md
+    - Features:
+        Real-time collaboration: features/real-time-collaboration.md
+        Scaling: features/scaling.md
+        Visualization: features/visualization.md
+        Optimization: features/optimization.md
+    - Resources:
+        Pricing: pricing.md
+        Terms of service: https://dicehub.com/terms-of-service
+        Privacy policy: https://dicehub.com/privacy-policy
+  - Tutorials:
+    - tutorials/index.md
+  - FAQ:
+    - faq/index.md
+  - Development:
+    - development/index.md
+  # - Guides:
+  #   - Understanding Kodular: guides/index.md
+  #   - Hello World: guides/hello-world.md
+  #   - Backpack: guides/backpack.md
+  #   - Concept Cards: guides/concept-cards.md

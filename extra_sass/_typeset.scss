@@ -1,0 +1,115 @@
+.md-typeset {
+  // font-size: 0.85rem;
+  // font-size: 0.75rem;
+  font-size: 0.75rem;
+  // line-height: 1.6;
+  line-height: 26px;
+  color-adjust: exact;
+  font-weight: 400;
+  // letter-spacing: 0.35px;
+
+  // [print]: We'll use a smaller `font-size` for printing, so code examples
+  // don't break too early, and `16px` looks too big anyway.
+  @media print {
+    font-size: 0.7rem;
+  }
+
+  // Default spacing
+  ul,
+  ol,
+  dl,
+  figure,
+  blockquote,
+  pre {
+    margin: 1em 0;
+  }
+
+  // // Headline on level 1
+  h1 {
+    // margin: 0 0 px2em(40px, 32px);
+    // color: var(--md-default-fg-color);
+    // font-weight: 600;
+    // font-size: 1.8rem;
+    // line-height: 1.0;
+    // letter-spacing: -0.01em;
+
+    // color: #267fc0;
+    // color: #000;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Headline on level 2
+  h2 {
+    // margin: px2em(40px, 25px) 0 px2em(16px, 25px);
+    // font-weight: 300;
+    // font-size: px2em(25px);
+    // line-height: 1.4;
+    // letter-spacing: -0.01em;
+
+    // color: #267fc0;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    // margin-bottom: 1.5rem
+  }
+
+  // Headline on level 3
+  h3 {
+    // margin: px2em(32px, 20px) 0 px2em(16px, 20px);
+    // font-weight: 400;
+    // font-size: px2em(20px);
+    // line-height: 1.5;
+    // letter-spacing: -0.01em;
+
+    // color: #222261;
+    font-weight: 600;
+    text-transform: none;
+    font-size: 1.0rem;
+    line-height: 1.4;
+    // margin-bottom: 1rem
+  }
+
+  // Headline on level 3 following level 2
+  h2 + h3 {
+    margin-top: px2em(16px, 20px);
+  }
+
+  // Headline on level 4
+  h4 {
+    // margin: px2em(16px) 0;
+    // font-weight: 700;
+    // letter-spacing: -0.01em;
+
+    text-transform: none;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  // Headline on level 5-6
+  h5,
+  h6 {
+    // margin: px2em(16px, 12.8px) 0;
+    // color: var(--md-default-fg-color--light);
+    // font-weight: 700;
+    // font-size: px2em(12.8px);
+    // letter-spacing: -0.01em;
+
+    // font-weight: 700;
+    // text-transform: none;
+    font-size: .875rem;
+  }
+
+  // Headline on level 5
+  h5 {
+    text-transform: uppercase;
+  }
+}
