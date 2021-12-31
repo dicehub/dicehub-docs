@@ -1,0 +1,29 @@
+---
+# Error: dicehub.SubstitutionConsideration
+#
+# Warn if short version of a term is used.
+#
+# Ref: https://errata-ai.gitbook.io/vale/getting-started/styles#substitution
+
+extends: substitution
+message: Consider using '%s' instead of '%s'
+level: warning
+ignorecase: true
+# swap maps tokens in form of bad: good
+swap:
+  '(?:e-mail|Email|E-mail)': email
+  '(?:ok|Okay)': OK|okay
+  '3\-D': 3D
+  above: preceding
+  account name: username
+  admin: administrator
+  approx\.: approximately
+  check: select
+  config: configuration
+  functionality: capability|feature
+  info: information
+  k8s: Kubernetes
+  repo: repository
+  ref: reference
+  tablet: device
+  vs\.: versus

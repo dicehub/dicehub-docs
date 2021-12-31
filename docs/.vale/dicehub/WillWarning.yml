@@ -1,0 +1,20 @@
+---
+# Error: dicehub.WillWarning
+#
+# Use present tense rather than future tense; in particular, try to avoid using
+# will where possible. For example:
+#
+# Not recommended: You can send an unsubscribe message. The server would then
+# remove you from the mailing list.
+# Recommended: If you send an unsubscribe message, the server removes you from
+# the mailing list.
+#
+# Ref: https://errata-ai.gitbook.io/vale/getting-started/styles#substitution
+# Ref: https://developers.google.com/style/tense
+
+extends: existence
+message: "Use present tense. Avoid using '%s'."
+ignorecase: true
+level: warning
+tokens:
+  - will

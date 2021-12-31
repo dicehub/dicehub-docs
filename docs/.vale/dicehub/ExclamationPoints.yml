@@ -1,0 +1,14 @@
+---
+# Error: dicehub.ExclamationPoints
+#
+# Rather than using exclamation points to call attention to an important point,
+# consider using notices such as "Note" or "Caution."
+#
+# Ref: https://errata-ai.gitbook.io/vale/getting-started/styles
+
+extends: existence
+message: "Don't use exclamation points in text."
+nonword: true
+level: error
+tokens:
+  - '\w!(?:\s|$)'

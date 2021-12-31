@@ -1,0 +1,80 @@
+---
+# Error: dicehub.Acronyms
+#
+# Ensures that the existence of first implies the existence of second.
+# For example: `[] ... World Health Organization (WHO) ..[]. The WHO is [...]`
+#
+# Ref: https://errata-ai.gitbook.io/vale/getting-started/styles#conditional
+
+extends: conditional
+message: "'%s' has no definition"
+level: error
+scope: text
+ignorecase: false
+# Ensures that the existence of 'first' implies the existence of 'second'.
+first: '\b([A-Z]{3,5})\b'
+second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
+# ... with the exception of these:
+exceptions:
+  - API
+  - ASCII
+  - AWS
+  - BEM
+  - BSD
+  - CDN
+  - CLI
+  - CPU
+  - CSS
+  - CSV
+  - DNS
+  - DOM
+  - DRY
+  - FAQ
+  - FTP
+  - GNU
+  - GPG
+  - GPL
+  - HTML
+  - HTTP
+  - HTTPS
+  - IDE
+  - JSON
+  - JSON5
+  - JSONC
+  - LESS
+  - MIT
+  - NFS
+  - NGINX
+  - NOTE
+  - NPM
+  - PGP
+  - PHP
+  - POST
+  - PUT
+  - RAM
+  - RPC
+  - RSA
+  - RSS
+  - SASS
+  - SCP
+  - SCSS
+  - SHA
+  - SOLID
+  - SQL
+  - SSH
+  - SSL
+  - SSO
+  - TCP
+  - TODO
+  - TOML
+  - UNIX
+  - URI
+  - URL
+  - US
+  - USB
+  - VIM
+  - VPC
+  - WIP
+  - XML
+  - YAML
+  - ZIP

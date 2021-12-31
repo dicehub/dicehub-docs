@@ -1,0 +1,12 @@
+---
+# Error: dicehub.Spelling
+#
+# Implements spell checking based on Hunspell-compatible dictionaries.
+#
+# Ref: https://errata-ai.gitbook.io/vale/getting-started/styles#spelling
+
+extends: spelling
+message: "Did you really mean '%s'?"
+level: error
+ignore:
+  - dicehub/vocab-exceptions.txt

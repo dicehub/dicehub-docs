@@ -1,0 +1,14 @@
+---
+# Error: dicehub.SentenceSpacing
+#
+# Leave only one space between sentences.
+#
+# Ref: https://errata-ai.gitbook.io/vale/getting-started/styles
+
+extends: existence
+message: "'%s' should have one space."
+level: error
+nonword: true
+tokens:
+  - '[.?!] {2,}[A-Z]'
+  - '[.?!][A-Z]'
