@@ -25,16 +25,20 @@ theme:
     # text: Poppins
     # text: Nunito Sans
     text: Roboto
-    # code: Roboto Mono
+    # text: Noto Sans
+    code: Roboto Mono
   logo: assets/logo.svg
   favicon: 'assets/favicon.png'
   features:
     - navigation.tabs
     # - navigation.tabs.sticky
-    # - navigation.sections
+    - navigation.sections
     - navigation.top
     - search.highlight
     - search.share
+    # - navigation.indexes
+    # - header.autohide
+    # - toc.integrate
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -106,25 +110,35 @@ markdown_extensions:
 # Site navigation in the side bar
 nav:
   - Home: index.md
-  - User Guide:
-    - Introduction: getting-started.md
-    - Features:
-        Real-time collaboration: features/real-time-collaboration.md
-        Scaling: features/scaling.md
-        Visualization: features/visualization.md
-        Optimization: features/optimization.md
-    - Resources:
-        Pricing: pricing.md
-        Terms of service: https://dicehub.com/terms-of-service
-        Privacy policy: https://dicehub.com/privacy-policy
+  # - Documentation: documentation/index.md
+  - Guide:
+    - Getting Started: guide/getting_started.md
+    - Essentials:
+      - guide/essentials/index.md
+      - guide/essentials/projects.md
+      - guide/essentials/groups.md
+      - guide/essentials/templates.md
+      - guide/essentials/applications.md
+  # - User documentation:
+  #   - User Docs: user/index.md
+  #   - Features:
+  #       Real-time collaboration: features/real-time-collaboration.md
+  #       Scaling: features/scaling.md
+  #       Visualization: features/visualization.md
+  #       Optimization: features/optimization.md
+  #   - Resources:
+  #       Pricing: user/pricing.md
+  #       Terms of service: https://dicehub.com/terms-of-service
+  #       Privacy policy: https://dicehub.com/privacy-policy
   - Tutorials:
     - tutorials/index.md
-  - FAQ:
-    - faq/index.md
+  - About:
+      - FAQ: about/faq.md
+      - Code of conduct: about/code_of_conduct.md
   - Development:
     - development/index.md
-  # - Guides:
-  #   - Understanding Kodular: guides/index.md
-  #   - Hello World: guides/hello-world.md
-  #   - Backpack: guides/backpack.md
-  #   - Concept Cards: guides/concept-cards.md
+  - Resources:
+      - Overview: resources/index.md
+      - Applications:
+        - CFD: resources/cfd_software/index.md
+        - Bio-Engineering: resources/bio_engineering/index.md

@@ -33,6 +33,9 @@
 
 .md-search__inner {
   float: left;
+  width: 17.7rem;
+  /* padding-left: 1rem; */
+  margin-left: 1rem;
 }
 
 .md-search__icon.md-icon svg {
@@ -41,23 +44,51 @@
   opacity: 0.5;
   margin-top: 2px;
 }
+
+@media screen and (min-width: 60em) {
+    [dir=ltr] .md-search__input {
+        padding-left: 1.8rem;
+    }
+
+    [dir=rtl] .md-search__input {
+        padding-right: 1.8rem
+    }
+
+    .md-search__input {
+        color: inherit;
+        font-size: .8rem
+    }
+
+    .md-search__input::placeholder {
+        color: var(--md-primary-bg-color--light)
+    }
+
+    .md-search__input+.md-search__icon {
+        color: var(--md-primary-bg-color)
+    }
+
+    [data-md-toggle=search]:checked~.md-header .md-search__input {
+        text-overflow: clip
+    }
+
+    [data-md-toggle=search]:checked~.md-header .md-search__input+.md-search__icon,[data-md-toggle=search]:checked~.md-header .md-search__input::placeholder {
+        color: var(--md-default-fg-color--light)
+    }
+}
 </style>
 
 
-<!-- Determine class according to configuration -->
 {% set class = "md-header" %}
 {% if "navigation.tabs.sticky" in features %}
   {% set class = class ~ " md-header--lifted" %}
 {% endif %}
 
-<!-- Header -->
 <header class="{{ class }}" data-md-component="header">
   <nav
     class="md-header__inner md-grid"
     aria-label="{{ lang.t('header.title') }}"
   >
 
-    <!-- Link to home -->
     <a
       href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
       title="{{ config.site_name | e }}"
@@ -68,12 +99,10 @@
       {% include "partials/logo.html" %}
     </a>
 
-    <!-- Button to open drawer -->
     <label class="md-header__button md-icon" for="__drawer">
       {% include ".icons/material/menu" ~ ".svg" %}
     </label>
 
-    <!-- Header title -->
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
@@ -93,17 +122,14 @@
       </div>
     </div>
 
-    <!-- Button to open search modal -->
     {% if "search" in config["plugins"] %}
       <label class="md-header__button md-icon" for="__search">
         {% include ".icons/material/magnify.svg" %}
       </label>
 
-      <!-- Search interface -->
       {% include "partials/search.html" %}
     {% endif %}
 
-    <!-- Repository information -->
     {% if config.repo_url %}
       <div class="md-header__source">
         {% include "partials/source.html" %}
@@ -112,7 +138,6 @@
 
     <div class="placeholder"></div>
 
-    <!-- Color palette -->
     {% if not config.theme.palette is mapping %}
       <form class="md-header__option" data-md-component="palette">
         {% for option in config.theme.palette %}
@@ -147,7 +172,6 @@
       </form>
     {% endif %}
 
-    <!-- Site language selector -->
     {% if config.extra.alternate %}
       <div class="md-header__option"></form>
         <div class="md-select">
@@ -177,7 +201,6 @@
       </div>
     {% endif %}
 
-    <!-- Repository information -->
     {% if config.repo_url %}
       <div class="md-header__source">
         {% include "partials/source.html" %}
@@ -185,7 +208,6 @@
     {% endif %}
   </nav>
 
-  <!-- Navigation tabs (sticky) -->
   {% if "navigation.tabs.sticky" in features %}
     {% if "navigation.tabs" in features %}
       {% include "partials/tabs.html" %}

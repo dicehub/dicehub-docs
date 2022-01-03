@@ -74,6 +74,13 @@
   padding-top: 12px;
   padding-bottom: 32px;
 }
+/* .mdx-hero__content__description span {
+  color: #1f88d4;
+  background: #1f88d4;
+  background: linear-gradient(90deg,#1f88d4 0,#714cb4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+} */
 
 .mdx-hero__image {
   max-width: 1170px;
@@ -264,8 +271,8 @@
 
         <!-- Hero content -->
         <div class="mdx-hero__content">
-          <h1>Documentation</h1>
-          <div class="mdx-hero__content__description">Explore our guides and examples for dicehub.</div>
+          <h1>dicehub Documentation</h1>
+          <div class="mdx-hero__content__description">Explore our <span>guides and examples</span> for dicehub.</div>
           <a
             href="{{ page.next_page.url | url }}"
             title="{{ page.next_page.title | e }}"
@@ -296,6 +303,10 @@
           <div class="first-column">
             <h3>Get started with the basics</h3>
             <p>
+              dicehub is a real-time collaborative
+              CFD (Computational Fluid Dynamics) simulations platform which simplifies your engineering workflow, offers massive parallel scaling and runs in your browser.
+            </p>
+            <p>
               Learn how to create your first application and quickly get started with dicehub.
             </p>
             <p>
@@ -319,9 +330,6 @@
 
 <!-- Content -->
 {% block content %}{% endblock %}
-
-<!-- Application footer -->
-
 
 <!-- Application footer -->
 {% block footer %}

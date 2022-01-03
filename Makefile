@@ -29,6 +29,10 @@ mkdocs-serve:
 mkdocs-dirtyreload:
 	mkdocs dirtyreload
 
+.PHON: mkdocs-build
+mkdocs-build:
+	mkdocs build
+
 .PHONY: lint-vale
 lint-vale:
 	./scripts/vale.sh
