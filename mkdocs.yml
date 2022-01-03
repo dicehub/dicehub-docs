@@ -132,13 +132,15 @@ nav:
   #       Privacy policy: https://dicehub.com/privacy-policy
   - Tutorials:
     - tutorials/index.md
-  - About:
-      - FAQ: about/faq.md
-      - Code of conduct: about/code_of_conduct.md
   - Development:
     - development/index.md
+  - Design:
+    - design/index.md
   - Resources:
       - Overview: resources/index.md
       - Applications:
         - CFD: resources/cfd_software/index.md
         - Bio-Engineering: resources/bio_engineering/index.md
+  - About:
+      - FAQ: about/faq.md
+      - Code of conduct: about/code_of_conduct.md

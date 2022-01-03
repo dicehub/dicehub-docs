@@ -29,9 +29,13 @@ mkdocs-serve:
 mkdocs-dirtyreload:
 	mkdocs dirtyreload
 
-.PHON: mkdocs-build
+.PHONY: mkdocs-build
 mkdocs-build:
 	mkdocs build
+
+.PHONY: mkdocs-watch-theme
+mkdocs-watch-theme:
+	makdocs serve --watch-theme
 
 .PHONY: lint-vale
 lint-vale:
