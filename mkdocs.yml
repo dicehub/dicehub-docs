@@ -112,7 +112,7 @@ nav:
   - Home: index.md
   # - Documentation: documentation/index.md
   - Guide:
-    - Getting Started: guide/getting_started.md
+    - Getting Started: guide/index.md
     - Essentials:
       - guide/essentials/index.md
       - guide/essentials/projects.md
@@ -132,15 +132,15 @@ nav:
   #       Privacy policy: https://dicehub.com/privacy-policy
   - Tutorials:
     - tutorials/index.md
-  - Development:
-    - development/index.md
-  - Design:
-    - design/index.md
-  - Resources:
-      - Overview: resources/index.md
-      - Applications:
-        - CFD: resources/cfd_software/index.md
-        - Bio-Engineering: resources/bio_engineering/index.md
+  # - Development:
+  #   - development/index.md
+  # - Design:
+  #   - design/index.md
+  # - Resources:
+  #     - Overview: resources/index.md
+  #     - Applications:
+  #       - CFD: resources/cfd_software/index.md
+  #       - Bio-Engineering: resources/bio_engineering/index.md
   - About:
       - FAQ: about/faq.md
       - Code of conduct: about/code_of_conduct.md

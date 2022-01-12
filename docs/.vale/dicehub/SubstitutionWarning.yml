@@ -14,7 +14,6 @@ swap:
   '(?:e-mail|Email|E-mail)': email
   '(?:ok|Okay)': OK|okay
   '3\-D': 3D
-  above: preceding
   account name: username
   admin: administrator
   approx\.: approximately
