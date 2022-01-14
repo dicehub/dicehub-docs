@@ -144,7 +144,7 @@ deploy:staging:
       -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
       -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
       $IMAGE_NAME
-      bash -c "aws s3 sync /app/site/ s3://www-docs-staging-dicehub-com/ && aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'"
+      bash -c "aws s3 sync /app/site/ s3://www-docs-staging-dicehub-com/ && aws cloudfront create-invalidation --distribution-id ${STAGING_CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'"
   dependencies:
     - image:docs-latest
     - image:docs-lint-markdown
