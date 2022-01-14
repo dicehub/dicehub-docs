@@ -42,7 +42,7 @@ workflow:
 #
 .docker_prepare:
   extends:
-    - .retry
+    - .default-retry
   image: docker:20.10.12
   services:
     - docker:20.10.12-dind
