@@ -66,3 +66,15 @@ image:docs-lint-markdown:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
   environment:
     name: registry/docs-lint-markdown
+
+image:docs-lint-vale:
+  extends:
+    - .docker_prepare
+  stage: build-images
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-vale:latest
+    DOCKERFILE: dockerfiles/Dockerfile.vale
+  script:
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+  environment:
+    name: registry/docs-lint-vale
