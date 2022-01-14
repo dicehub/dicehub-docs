@@ -9,4 +9,7 @@
 !theme/
 !.vale.ini
 !mkdocs.yml
-!markdownlint.yaml
+!.markdownlint.yaml
+!requirements
+!Makefile
+!.git

@@ -49,3 +49,7 @@ lint-markdownlint:
 lint:
 	$(MAKE) lint-vale
 	$(MAKE) lint-markdownlint
+
+.PHONY: docker-build
+docker-build:
+	./scripts/docker_build.sh
