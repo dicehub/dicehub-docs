@@ -33,19 +33,6 @@ workflow:
     - if: '$CI_COMMIT_BRANCH == "main"'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
 
-
-#
-# Rules to determine which pipelines jobs will run in.
-#
-.rules_scheduled_manual:
-  rules:
-    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
-      when: never
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
-      when: manual
-      allow_failure: true
-
-
 ###############################################
 #           Docker images builds              #
 ###############################################
@@ -99,7 +86,6 @@ image:docs-lint-vale:
 #
 image:docs-latest:
   extends:
-    - .rules_scheduled_manual
     - .docker_prepare
   stage: build-images
   variables:
