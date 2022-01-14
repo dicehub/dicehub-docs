@@ -138,6 +138,7 @@ deploy:staging:
     GIT_STRATEGY: none
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
   script:
+    - docker pull $IMAGE_NAME
     - docker run -it --rm
       -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
       -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
