@@ -3,7 +3,7 @@ default:
   interruptible: true
   timeout: 30m
   tags:
-    - autoscale-runner
+    - dicehub-com-docker
 
 stages:
   - lint
@@ -52,7 +52,7 @@ workflow:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   tags:
-    - autoscale-runner
+    - dicehub-com-docker
 
 #
 # Lint docs
