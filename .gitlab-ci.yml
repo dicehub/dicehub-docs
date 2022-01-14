@@ -8,6 +8,7 @@ default:
 stages:
   - lint
   - build-images
+  - deploy
 
 #
 # Retry a job automatically if it fails (2 times)
@@ -120,3 +121,33 @@ image:docs-release:
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
 
+
+###############################################
+#                 Deployment                  #
+###############################################
+
+#
+# Deploy site to staging
+#
+
+deploy:staging:
+  extends:
+    - .docker_prepare
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+  script:
+    - docker run -it --rm
+      -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+      -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+      $IMAGE_NAME
+      bash -c "aws s3 sync /app/site/ s3://www-docs-staging-dicehub-com/ && aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'"
+  dependencies:
+    - image:docs-latest
+    - image:docs-lint-markdown
+    - image:docs-vale
+  environment:
+    name: staging
+    url: https://docs.staging.dicehub.com
