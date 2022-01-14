@@ -89,6 +89,7 @@ image:docs-latest:
   extends:
     - .docker_prepare
   stage: build-images
+  needs: []
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
     DOCKERFILE: Dockerfile
@@ -106,6 +107,7 @@ image:docs-release:
   extends:
     - .docker_prepare
   stage: build-images
+  needs: []
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
     DOCKERFILE: Dockerfile
