@@ -31,7 +31,20 @@ workflow:
     # Allow branch pipelines for the default branch, stable branches named XX.X, and review app branches.
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_COMMIT_BRANCH == "main"'
-    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+
+
+#
+# Rules to determine which pipelines jobs will run in.
+#
+.rules_scheduled_manual:
+  rules:
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: manual
+      allow_failure: true
+
 
 ###############################################
 #           Docker images builds              #
@@ -78,3 +91,43 @@ image:docs-lint-vale:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
   environment:
     name: registry/docs-lint-vale
+
+
+#
+# Latest docs image
+# Created with a new release/tag
+#
+image:docs-latest:
+  extends:
+    - .rules_scheduled_manual
+    - .docker_prepare
+  stage: build-images
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+    DOCKERFILE: Dockerfile
+  script:
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker push $IMAGE_NAME
+  environment:
+    name: registry/latest
+
+#
+# Main docs image
+# Created with a new release/tag
+#
+image:docs-release:
+  extends:
+    - .docker_prepare
+  stage: build-images
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    DOCKERFILE: Dockerfile
+  script:
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker push $IMAGE_NAME
+  environment:
+    name: registry/latest
+  # Only branches with versions like 1.0.0
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+
