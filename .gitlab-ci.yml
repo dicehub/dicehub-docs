@@ -147,7 +147,7 @@ deploy:staging:
   dependencies:
     - image:docs-latest
     - image:docs-lint-markdown
-    - image:docs-vale
+    - image:docs-lint-vale
   environment:
     name: staging
     url: https://docs.staging.dicehub.com
