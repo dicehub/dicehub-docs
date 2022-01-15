@@ -1,5 +1,10 @@
 FROM python:3.9.6-slim-buster as base
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV TZ="CET"
+
 WORKDIR /app
+
 RUN \
     set -eux \
     && apt-get update -q \
@@ -20,25 +25,7 @@ COPY requirements/ ./requirements/
 RUN pip install --no-cache-dir -r requirements/requirements.txt
 
 # Copy source code
-COPY . /app
+COPY . .
 
 # Build site
 RUN make mkdocs-build
-
-
-# # Deploy
-# # ======
-# FROM production as deployment
-
-# ARG AWS_ACCESS_KEY_ID
-# ARG AWS_SECRET_ACCESS_KEY
-# ARG AWS_DEFAULT_REGION
-# ARG CLOUDFRONT_DISTRIBUTION_ID="E5L7E66VL8TQC"
-
-# RUN \
-#     set -eux \
-#     && aws s3 sync /app/site/ s3://www-docs-staging-dicehub-com/ --quiet \
-#     && aws cloudfront create-invalidation \
-#       --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} \
-#       --paths '/*'
-
