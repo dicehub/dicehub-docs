@@ -30,11 +30,13 @@ exceptions:
   - DNS
   - DOM
   - DRY
+  - EUR
   - FAQ
   - FTP
   - GNU
   - GPG
   - GPL
+  - HPC
   - HTML
   - HTTP
   - HTTPS
@@ -74,6 +76,7 @@ exceptions:
   - URL
   - US
   - USB
+  - VAT
   - VIM
   - VPC
   - VTK
