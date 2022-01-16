@@ -44,7 +44,7 @@ The current version of dicehub (1.0.0) can be used in the following way:
 
 ## Our goals
 
-- **Simulation Democratization**: to build a community with focus on simplifying and reducing the barrier of entry for all types simulations.
+- **Simulation Democratization**: to build a community with focus on simplifying and reducing the barrier of entry for all types of simulations.
 - **Reproducibility**: allow an easy way to reproduce and share your simulation results. 
 
 ## Is dicehub the solution for me?
