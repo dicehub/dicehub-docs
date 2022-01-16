@@ -6,8 +6,9 @@ Welcome to the official [dicehub](https://about.dicehub.com) documentation.
 
 | Topic                                             | Description                                                                         |
 | :------------------------------------------------ | :---------------------------------------------------------------------------------- |
-| [**Getting Started**](./index.md#getting-started) | A quick introduction to dicehub                                                     |
+| [**Quick Start**](./quick_start.md) | A quick introduction to dicehub with a simple meshing example                                                    |
 | [**Essentials**](./essentials/index.md)           | Main concepts and features explained in an understandable way for all dicehub users |
+| [**Pricing**](./pricing/plans.md)           | The current pricing structure for dicehub services |
 
 ---
 
@@ -25,7 +26,7 @@ The above example demonstrates a couple of core dicehub features:
 - **Visualization**: A powerful visualization engine based on The Visualization Toolkit (VTK) and WebAssembly allows users to inspect data even up to 12 GB in size.
 - **UI/UX**: The interface is designed to simplify the main steps to create a simulation without sacrificing the ability to do more complex workflows.
 
-These are just a few features that dicehub offers. More features will be explained in other parts of this documentation.
+These are just a few features that dicehub offers. More features are explained in other parts of this documentation.
 
 ## The Simulation Operations Platform
 
@@ -47,8 +48,8 @@ The current version of dicehub (1.0.0) can be used in the following way:
 - **Simulation Democratization**: to build a community with focus on simplifying and reducing the barrier of entry for all types of simulations.
 - **Reproducibility**: allow an easy way to reproduce and share your simulation results. 
 
-## Is dicehub the solution for me?
+## Is dicehub the right solution for me?
 
 As with everything: **it depends** 
 
-There are many other software solutions, libraries and platforms out there. Each one has features that might help you solve you current problem. The best way to find out if dicehub is something you might need in your workflow is to try to create a simple simulation example, test some of the functions dicehub offers and go on to more complex cases which you are trying to solve. dicehub is still in early stages of development, so the amount of solvers is limited for right now. If you are an expert CFD simulation engineer you are probably better suited with the tools you already know, but dicehub could be an additional tool to share and showcase your results. The possibility for dicehub to quickly evolve, add new templates and workflows, is what allows it to adapt to your needs and offer you solutions that are not available right now.
+There are many other software solutions, libraries and platforms out there. Each one has features that might help you solve you current problem. The best way to find out if dicehub is something you might need in your workflow is to try to create a simple simulation example, test some of the functions dicehub offers and go on to more complex cases which you are trying to solve. dicehub is still in early stages of development, so the amount of solvers is limited for right now. If you are an expert CFD simulation engineer you are probably better suited with the tools you already know, but dicehub could be an additional tool to share and showcase your results. The possibility for dicehub to quickly evolve, add new templates and workflows, is what allows it to adapt to your needs, and offer you solutions that are not available right now.

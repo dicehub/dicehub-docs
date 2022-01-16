@@ -84,6 +84,11 @@ The following machines are available on dicehub.com:
 | dh1_18x | 96 GB RAM, 200 GB of disk space, Network performance up to 50 Gigabit, Elastic Fabric Adapter (EFA) is enabled   | 18    | €-/hour |
 | dh1_36x | 192 GB RAM, 400 GB of disk space, Network performance up to 100 Gigabit, Elastic Fabric Adapter (EFA) is enabled | 36    | €-/hour |
 
-### Tax
+### Is multithreading enabled?
+
+Multithreading in most cases does not significantly improve the solution time for CFD simulations. 
+Because of this, for all dicehub machines multithreading is disabled.
+
+## Tax
 
 Please note that all charges to your account are made in EUR. Prices in other currencies are provided as a convenience and are only an estimate based on current exchange rates. Shown prices are VAT exclusive. VAT are be billed to EU customers in line with the applicable rates of their member state unless a valid VAT number is provided.

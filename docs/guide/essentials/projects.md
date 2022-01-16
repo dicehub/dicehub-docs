@@ -9,9 +9,11 @@ Projects contain applications and can be shared with other users by adding them 
 
 Things you can do in a project:
 
-- [Create a project](./#create-a-project)
-- [Create an application](./#create-an-application)
-- [Create a group](./#create-a-group)
+- [Create a project](#create-a-project)
+- [Create an application](#create-an-application)
+- [Add members to your project](#add-members-to-your-project)
+- [Remove members from your project](#remove-members-from-your-project)
+- [Change project settings](#change-project-settings)
 
 ## Create a project
 
@@ -56,14 +58,37 @@ To create a project in dicehub:
       <figcaption>Select application template</figcaption>
     </figure>
 
-## Inspect activities
-
-...
-
 ## Add members to your project
 
-...
+To view, add or remove members in your project, open your project and 
+go to the **Members section**.
 
-## Monitor computational runs
+![Project members section](../../assets/images/project_members.png){: .zoom .image-wrapper loading=lazy }
 
-...
+To add a member to the project:
+
+1. Go to **Project > Members**.
+1. In the input field with the label `Find a member` type the username or email of the person you want to add.
+1. Select the **Visibility level** and **Role**.
+1. Click on **Add**.
+
+## Remove members from your project
+
+To remove a member from the project:
+
+1. Go to **Project > Members**.
+1. Click on the **Remove button** next to the user you would like to remove.
+
+## Change project settings
+
+You can access the project settings by selecting the **Settings** tab in your project.
+
+![Project settings](../../assets/images/project_settings.png){: .zoom .image-wrapper loading=lazy }
+
+The following settings can be changed:
+
+- **Profile picture**: The image to identify your project.
+- **General information**: The general information of the project such as title and description can be changed here.
+- **Namespace**: Namespace of the project. All contents of the project are in this namespace.
+- **Privacy settings**: Here you can manage privacy settings by adjusting the visibility level.
+- **Delete project**: Deleting this project deletes all its resources and can not be restored.

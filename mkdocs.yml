@@ -45,9 +45,14 @@ extra_css:
 
 extra_javascript:
   - assets/javascripts/extra.js
+  - https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js
 
 plugins:
   - search
+  - mermaid2:
+      arguments:
+        sequence:
+          mirrorActors: false
   - git-revision-date-localized:
       type: date
       fallback_to_build_date: true
@@ -95,30 +100,39 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight
-  - pymdownx.superfences
+  # - pymdownx.superfences
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.smartsymbols
   - pymdownx.snippets
-  - pymdownx.superfences
+  # - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
 
 # Site navigation in the side bar
 nav:
   - Home: index.md
   # - Documentation: documentation/index.md
   - Guide:
-    - Getting Started: guide/index.md
+    - guide/index.md
+    - guide/quick_start.md
     - Essentials:
       - guide/essentials/index.md
       - guide/essentials/projects.md
       - guide/essentials/groups.md
       - guide/essentials/templates.md
       - guide/essentials/applications.md
+      - guide/essentials/flows.md
+    - Pricing:
+      - guide/pricing/plans.md
   # - User documentation:
   #   - User Docs: user/index.md
   #   - Features:
@@ -127,13 +141,14 @@ nav:
   #       Visualization: features/visualization.md
   #       Optimization: features/optimization.md
   #   - Resources:
-  #       Pricing: user/pricing.md
   #       Terms of service: https://dicehub.com/terms-of-service
   #       Privacy policy: https://dicehub.com/privacy-policy
   - Tutorials:
     - tutorials/index.md
-  # - Development:
-  #   - development/index.md
+  - Development:
+    - Overview: development/index.md
+    - Documentation:
+      - development/documentation/index.md
   # - Design:
   #   - design/index.md
   # - Resources:
@@ -144,3 +159,5 @@ nav:
   - About:
       - FAQ: about/faq.md
       - Code of conduct: about/code_of_conduct.md
+      - Terms of service: https://dicehub.com/terms-of-service
+      - Privacy policy: https://dicehub.com/privacy-policy
