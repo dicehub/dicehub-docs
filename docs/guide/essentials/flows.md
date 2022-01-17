@@ -42,7 +42,6 @@ graph LR;
 
 
 ```yaml
----
 basic-flow:
   type: flow
   stages:
@@ -54,18 +53,17 @@ generate_task:
   type: task
   stage: generate
   script:
-    - .dicehub/scripts/generate_case.sh
+    - echo "This task generates a simulation case"
 
 run_task:
   type: task
   stage: run
   script:
-    - Background Mesh: .dicehub/scripts/run_openfoam_command.sh "blockMesh"
+    - echo "This task starts a run with the data from the previous stage"
 
 upload_task:
   type: task
   stage: upload
-  where: controller
   script:
-    - Uploading: .dicehub/scripts/upload_run.sh
+    - echo "This task uploads the result to the storage"
 ```
