@@ -40,7 +40,6 @@ graph LR;
   run_task-.->upload_task;
 ```
 
-
 ```yaml
 basic-flow:
   type: flow
