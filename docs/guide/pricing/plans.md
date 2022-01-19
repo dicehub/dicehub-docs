@@ -10,7 +10,7 @@ and billing.
 
 ## Plans
 
-dicehub offers 3 plans which include different features and options:
+dicehub offers 4 plans which include different features and options:
 
 ### Free
 
