@@ -8,11 +8,7 @@ and billing.
     The following plans and the pricing structure is subject to change. We are
     always open for suggestions and welcome any feedback from dicehub users.
 
-## Plans
-
-dicehub offers 4 plans which include different features and options:
-
-### Free
+## Free plan
 
 For users who sign up and want to test the dicehub capabilities without any advanced features
 
@@ -22,6 +18,10 @@ For users who sign up and want to test the dicehub capabilities without any adva
 - You receive a 10 Core-hours limit for free machines per month.
 - Your storage is limited to 5 GB for all projects in your namespace.
 - HPC is not enabled in this plan.
+
+## Paid plans
+
+dicehub offers 3 paid plans which include different features and options:
 
 ### Starter
 
