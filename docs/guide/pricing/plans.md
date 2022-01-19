@@ -12,7 +12,7 @@ and billing.
 
 For users who sign up and want to test the dicehub capabilities without any advanced features
 
-- Costs €0.00
+- Costs €0.00 (+ pay as you scale)
 - You can create up to 5 projects and in each project up to 10 applications.
 - Collaboration is limited to 5 users at the same time.
 - You receive a 10 Core-hours limit for free machines per month.
@@ -27,7 +27,7 @@ dicehub offers 3 paid plans which include different features and options:
 
 For individuals with limited collaboration and scaling requirements.
 
-- Costs **€0** 
+- Costs **€0** (+ pay as you scale)
 - Credit card and billing information is required
 - You can create up to 5 projects and in each project up to 10 applications.
 - Collaboration is limited to 5 users at the same time.
@@ -42,7 +42,7 @@ For individuals with limited collaboration and scaling requirements.
 
 Ideal for small and medium businesses with unlimited collaboration and project management needs.
 
-- Costs **€19** (~~€49~~) per editor/manager per month. Guests are free.
+- Costs **€19** (~~€49~~) per editor/manager per month (+ pay as you scale). Guests are free.
 - You can create up to 10 projects and in each project up to 20 applications.
 - You have unlimited collaboration.
 - You receive a 50 Core-hours limit for free machines per month. Any usage 
@@ -54,7 +54,7 @@ Ideal for small and medium businesses with unlimited collaboration and project m
 
 For experts and organizations who require unlimited collaboration, management and scaling capabilities.
 
-- Costs **€99** (~~€499~~) per editor/manager per month. Guests are free.
+- Costs **€99** (~~€499~~) per editor/manager per month (+ pay as you scale). Guests are free.
 - You can create up to 20 projects and in each project up to 40 applications.
 - You have unlimited collaboration.
 - You receive a 100 Core-hours limit for free machines per month. Any usage 
