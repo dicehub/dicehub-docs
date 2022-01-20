@@ -149,7 +149,13 @@ nav:
     - Meshing:
       - Hex-dominant mesher:
         - template/hex_dominant_mesher/index.md
+        - template/hex_dominant_mesher/geometries.md
         - template/hex_dominant_mesher/background_mesh.md
+        - template/hex_dominant_mesher/material_point.md
+        - template/hex_dominant_mesher/edges_refinement.md
+        - template/hex_dominant_mesher/surface_refinement.md
+        - template/hex_dominant_mesher/volume_refinement.md
+        - template/hex_dominant_mesher/boundary_layers.md
   # - User documentation:
   #   - User Docs: user/index.md
   #   - Features:

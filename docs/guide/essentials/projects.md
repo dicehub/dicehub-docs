@@ -4,10 +4,11 @@
   Use projects to group all things related to your domain.
 </div>
 
-A dicehub project is a space where you can find all the things related to a specific problem. 
+A dicehub project is a space where you can find all the things related to a specific problem.
+
 Projects contain applications and can be shared with other users by adding them as members.
 
-Things you can do in a project:
+Things related to a project on this page:
 
 - [Create a project](#create-a-project)
 - [Create an application](#create-an-application)
@@ -33,11 +34,11 @@ To create a project in dicehub:
 
 === "Images"
     <figure Markdown>
-      ![Create project 1](../../assets/images/create_project_1.png){: .zoom .image-wrapper loading=lazy }
+      ![Create project 1](./images/create_project_1.png){: .zoom .image-wrapper loading=lazy }
       <figcaption>User dashboard / projects page</figcaption>
     </figure>
     <figure Markdown>
-      ![Create project 2](../../assets/images/create_project_2.png){: .zoom .image-wrapper loading=lazy }
+      ![Create project 2](./images/create_project_2.png){: .zoom .image-wrapper loading=lazy }
       <figcaption>Create project page</figcaption>
     </figure>
 
@@ -50,11 +51,11 @@ To create a project in dicehub:
 
 === "Images"
     <figure Markdown>
-      ![Create application 1](../../assets/images/create_app_1.png){: .zoom .image-wrapper loading=lazy }
+      ![Create application 1](./images/create_app_1.png){: .zoom .image-wrapper loading=lazy }
       <figcaption>Project applications overview</figcaption>
     </figure>
     <figure Markdown>
-      ![Create application 2](../../assets/images/create_app_2.png){: .zoom .image-wrapper loading=lazy }
+      ![Create application 2](./images/create_app_2.png){: .zoom .image-wrapper loading=lazy }
       <figcaption>Select application template</figcaption>
     </figure>
 
@@ -63,7 +64,7 @@ To create a project in dicehub:
 To view, add or remove members in your project, open your project and 
 go to the **Members section**.
 
-![Project members section](../../assets/images/project_members.png){: .zoom .image-wrapper loading=lazy }
+![Project members section](./images/project_members.png){: .zoom .image-wrapper loading=lazy }
 
 To add a member to the project:
 
@@ -83,7 +84,7 @@ To remove a member from the project:
 
 You can access the project settings by selecting the **Settings** tab in your project.
 
-![Project settings](../../assets/images/project_settings.png){: .zoom .image-wrapper loading=lazy }
+![Project settings](./images/project_settings.png){: .zoom .image-wrapper loading=lazy }
 
 The following settings can be changed:
 

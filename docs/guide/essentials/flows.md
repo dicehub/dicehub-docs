@@ -6,39 +6,46 @@
 
 Flows in dicehub are pipelines that allow to build and automate complex simulation
 tasks.
-Each task in a simulation run can be customized and run on one or multiple machines.
+Each task in a simulation can be customized and run on one or multiple machines.
+
+On this page you can find more information about these topics:
 
 - [Flow component types](#flow-component-types)
-- [Basic flow](#basic-flow)
+- [Basic flow example](#basic-flow-example)
 
 ## Flow component types
 
 A flow has multiple component types to setup a case:
 
-- flow
-- service
-- task
-- stage
+- **flow**: A flow is a set of stages to be executed during the run.
+- **stage**: Flows can be organized into stages, for example "download all case files" or "prepare the geometry". 
+  Stages can run in parallel. 
+- **task**: A task is a set of commands to be executed in one specified stage.
+- **service**: A service is similar to a task except that it can stay in the background during the whole flow. 
+This is useful when a service is needed to monitor the progress of a task.
 
-## Basic flow
+## Basic flow example
 
 A very simple flow describes multiple stages. Every task is then executed based
-on the stage of running flow.
+on the stage of a running flow.
 
 ```mermaid
 graph LR;
   subgraph upload stage;
-    upload_task;
+    upload --> upload_task_1;
+    upload --> upload_task_2;
   end;
   subgraph run stage;
-    run_task;
+    run --> run_task;
   end;
   subgraph generate stage;
-    generate_task;
+    generate --> generate_task;
   end;
-  generate_task-.->run_task;
-  run_task-.->upload_task;
+  generate_task -.-> run;
+  run_task -.-> upload;
 ```
+
+Example for the `/.dicehub/dicehub-flow.yml` file with the flow configuration matching the diagram:
 
 ```yaml
 basic-flow:
@@ -48,21 +55,21 @@ basic-flow:
     - run
     - upload
 
-generate_task:
-  type: task
-  stage: generate
-  script:
-    - echo "This task generates a simulation case"
-
 run_task:
   type: task
   stage: run
   script:
     - echo "This task starts a run with the data from the previous stage"
 
-upload_task:
+upload_task_1:
   type: task
   stage: upload
   script:
     - echo "This task uploads the result to the storage"
+
+upload_task_2:
+  type: task
+  stage: upload
+  script:
+    - echo "This task uploads something else to the storage simultaneously to the upload_task_1"
 ```

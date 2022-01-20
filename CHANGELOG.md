@@ -1,1 +1,1 @@
-- Add initial documentation structure.
+- Setup mkdocs to generate the documentation website. #1 !1

@@ -5,7 +5,7 @@ the same time allow a very fast workflow.
 
 The user dashboard in dicehub has the following elements:
 
-![User dashboard](../../assets/images/user_dashboard_ui.png){: .zoom .image-wrapper loading=lazy }
+![User dashboard](./images/user_dashboard_ui.png){: .zoom .image-wrapper loading=lazy }
 
 1. **Global navigation**: a consistently available user interface element that used for global navigation and provides access to system-wide functions.
 1. **Side navigation**: a vertical list of navigational links. In this navigation you can find:

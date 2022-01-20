@@ -1,6 +1,10 @@
 # Plans
 
-Here you can find the general information on different plans, pricing 
+<div class="h1-sub">
+  Information about plans and pricing.
+</div>
+
+Here you can find general information about different plans, pricing 
 and billing.
 
 !!! important

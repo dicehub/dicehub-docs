@@ -32,7 +32,7 @@ These are just a few features that dicehub offers. More features are explained i
 
 dicehub is a simulation operations platform that includes most of the common features needed to create simulation workflows. At the current stage of development dicehub focuses on Computation Fluid Dynamics (CFD), but the template-based approach allows an implementation of any other simulation type such as structural dynamics, computer vision or machine learning.  
 
-The current version of dicehub (1.0.0) can be used in the following way:
+The current version of dicehub can be used in the following way:
 
 - Visualizing large STL (STereoLithography) files or meshes in the browser
 - Creating hex-dominant meshes
@@ -46,9 +46,17 @@ The current version of dicehub (1.0.0) can be used in the following way:
 ## Our goals
 
 - **Simulation Democratization**: to build a community with focus on simplifying and reducing the barrier of entry for all types of simulations.
-- **Reproducibility**: allow an easy way to reproduce and share your simulation results. 
+- **Reproducibility**: allow an easy way to reproduce and share your simulation results.
 
-## Is dicehub the right solution for me?
+![dicehub Vision](../assets/images/dicehub_vision.png "dicehub_vision"){: .zoom .image-wrapper }
+
+## Importance of simulations
+
+In recent years expensive experiments have been more and more replaced by virtual 3D simulations in multiple industries (for example in the automotive industry, aerospace industry, chemical industry). This has significantly reduced production costs and resulted in new product innovations. The main driver is the emergence of the new simulation and optimization applications which model processes such as aerodynamics and thermodynamics and predict the experimental results accurately thereby allowing a faster product development. Such applications have become the most important tools of an engineer/scientist. dicehub tries to lower the barrier for the use of these applications and enable a level of simulation democratization not seen before in engineering.
+
+![Simulation examples](../assets/images/simulation_examples.png "simulation_examples"){: .zoom }
+
+## Is dicehub the right solution for you?
 
 As with everything: **it depends** 
 
