@@ -3,7 +3,7 @@
 In this step, the geometry used by the hex-dominant mesher is created and/or 
 imported to define the regions of interest in the background mesh.
 
-<figure markdown>
+<figure Markdown>
   ![Geometries step](./images/geometries_step.png){ .zoom .image-wrapper }
   <figcaption>View of the geometries step</figcaption>
 </figure>
@@ -32,10 +32,10 @@ of every geometric entity in the model.
 Instead of using STL files, some primitive shapes can be imported using the 
 **Add geometry** button. Those shapes are:
 
-  - Box
-  - Sphere
-  - Plane (defined by a point in space and a normal vector)
-  - Plate
+- Box
+- Sphere
+- Plane (defined by a point in space and a normal vector)
+- Plate
 
 The properties of each added geometric entity can be modified using the 
 **objects view**. 
@@ -44,7 +44,7 @@ The added geometric entity can also be translated by using the middle button
 of the mouse and has some control points that can be dragged to increase or 
 decease the entity's size in a certain direction.
 
-<figure markdown>
+<figure Markdown>
   ![Object properties](./images/object_properties_objects_view.png){ .zoom .image-wrapper }
   <figcaption>Object properties in the objects view</figcaption>
 </figure>
@@ -82,8 +82,8 @@ The plane entity is defined by a point and a normal vector. The point can be
 any arbitrary point that lies on the required plane, and its location can be 
 defined by two methods:
 
- - Explicitly defining the coordinates as shown on the left image.
- - Dragging the red point by the mouse as shown on the right image.
+- Explicitly defining the coordinates as shown on the left image.
+- Dragging the red point by the mouse as shown on the right image.
 
 The outward pointing normal has multiple options for definition:
 

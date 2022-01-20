@@ -45,31 +45,8 @@ setup your case with the following steps:
    [Define the extent of the computational domain and a base level mesh density.](./background_mesh.md)
 1. **Material Point**:  
    [Specify the point location in the enclosed area where mesh cells are generated](./material_point.md)
-1. **Edges refinement**:[](./edges_refinement.md)
-1. **Surface refinement**: []()
-1. **Volume refinment**: []()
-1. **Boundary Layers**: []()
-1. **Cell Zones**: []()
-
-<!-- ## Geometries
-
-In this step, the geometry used by the [Hex-dominant mesher](/HEX-dominant%20mesher.md) is created and/or imported to define the regions of interest in the [background mesh](/background_mesh.md).
-
-## Background mesh
-
-In this step, the background mesh is created.
-
-For the  background mesh a bounding box is generated and the OpenFOAM `blockMesh` 
-utility is used. 
-
-!!! tip
-    Other more complex background meshes are also allowed but not
-    covered in this case.
-
-### Bounding box
-
-This part is for defining the geometric boundaries of the box that bounds the 
-input geometry (see the [Geometries](/geometry.md) step). The bounding box can 
-be defined automatically or manually.
-
-The bounding box should surround the imported or created geometry. -->
+1. **Edges refinement**
+1. **Surface refinement**
+1. **Volume refinment**
+1. **Boundary Layers**
+1. **Cell Zones**
