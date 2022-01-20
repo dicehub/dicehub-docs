@@ -35,7 +35,7 @@ mkdocs-build:
 
 .PHONY: mkdocs-watch-theme
 mkdocs-watch-theme:
-	makdocs serve --watch-theme
+	mkdocs serve --watch-theme
 
 .PHONY: lint-vale
 lint-vale:

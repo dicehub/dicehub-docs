@@ -3,6 +3,7 @@ Biopython
 CFD
 dicehub
 GPU
+mesher
 multithreading
 namespace
 Namespace

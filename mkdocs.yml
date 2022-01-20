@@ -3,6 +3,7 @@ site_description: dicehub Documentation
 site_author: dicehub Team
 site_url: https://docs.dicehub.com/
 copyright: 'Copyright &copy; 2022 dicehub'
+repo_url: ""
 
 # Customization
 theme:
@@ -46,6 +47,9 @@ extra_css:
 extra_javascript:
   - assets/javascripts/extra.js
   - https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js
+  - assets/javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 plugins:
   - search
@@ -116,6 +120,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.arithmatex:
+      generic: true
 
 # Site navigation in the side bar
 nav:
@@ -133,6 +139,17 @@ nav:
       - guide/essentials/flows.md
     - Pricing:
       - guide/pricing/plans.md
+    - UI / UX:
+      - guide/ui/index.md
+    - Resources:
+      - guide/resources/changelog.md
+      - guide/resources/roadmap.md
+  - Templates:
+    - template/index.md
+    - Meshing:
+      - Hex-dominant mesher:
+        - template/hex_dominant_mesher/index.md
+        - template/hex_dominant_mesher/background_mesh.md
   # - User documentation:
   #   - User Docs: user/index.md
   #   - Features:
