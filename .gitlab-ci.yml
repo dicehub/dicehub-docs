@@ -1,0 +1,154 @@
+default:
+  image: "registry.dicehub.org/dicehub-com/docker-images/dicehub-base-images:python-3.9.6-docker-20.10.8"
+  interruptible: true
+  timeout: 30m
+  tags:
+    - dicehub-com-docker
+
+stages:
+  - lint
+  - build-images
+  - deploy
+
+#
+# Retry a job automatically if it fails (2 times)
+#
+.default-retry:
+  retry:
+    max: 2
+
+#
+# workflow:rules to prevent duplicate pipelines when pushing to a branch with an open MR.
+#
+workflow:
+  rules:
+    # Prevent branch pipelines if an MR is open on the branch.
+    - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push" && $CI_OPEN_MERGE_REQUESTS
+      when: never
+    # Allow merge request and scheduled pipelines.
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+    - if: '$CI_PIPELINE_SOURCE == "trigger"'
+    # Allow branch pipelines for the default branch, stable branches named XX.X, and review app branches.
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$CI_COMMIT_BRANCH == "main"'
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+
+###############################################
+#           Docker images builds              #
+###############################################
+
+#
+# Reuse some common commands
+#
+.docker_prepare:
+  extends:
+    - .default-retry
+  image: docker:20.10.12
+  services:
+    - docker:20.10.12-dind
+  before_script:
+    - docker info
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  tags:
+    - dicehub-com-docker
+
+#
+# Lint docs
+#
+image:docs-lint-markdown:
+  extends:
+    - .docker_prepare
+  stage: lint
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-markdown:latest
+    DOCKERFILE: dockerfiles/Dockerfile.markdownlint
+  script:
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+  environment:
+    name: registry/docs-lint-markdown
+
+image:docs-lint-vale:
+  extends:
+    - .docker_prepare
+  stage: lint
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-vale:latest
+    DOCKERFILE: dockerfiles/Dockerfile.vale
+  script:
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+  environment:
+    name: registry/docs-lint-vale
+
+
+#
+# Latest docs image
+# Created with a new release/tag
+#
+image:docs-latest:
+  extends:
+    - .docker_prepare
+  stage: build-images
+  needs: []
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+    DOCKERFILE: Dockerfile
+  script:
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker push $IMAGE_NAME
+  environment:
+    name: registry/latest
+
+#
+# Main docs image
+# Created with a new release/tag
+#
+image:docs-release:
+  extends:
+    - .docker_prepare
+  stage: build-images
+  needs: []
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    DOCKERFILE: Dockerfile
+  script:
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker push $IMAGE_NAME
+  environment:
+    name: registry/latest
+  # Only branches with versions like 1.0.0
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+
+
+###############################################
+#                 Deployment                  #
+###############################################
+
+#
+# Deploy site to staging
+#
+
+deploy:staging:
+  extends:
+    - .docker_prepare
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+  script:
+    - docker pull $IMAGE_NAME
+    - docker run --rm
+      -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+      -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+      $IMAGE_NAME
+      bash -c "aws s3 sync --exact-timestamps /app/site/ s3://www-docs-staging-dicehub-com/ && aws cloudfront create-invalidation --distribution-id ${STAGING_CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'"
+  dependencies:
+    - image:docs-latest
+    - image:docs-lint-markdown
+    - image:docs-lint-vale
+  environment:
+    name: staging
+    url: https://docs.staging.dicehub.com

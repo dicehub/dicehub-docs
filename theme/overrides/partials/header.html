@@ -1,0 +1,216 @@
+<style>
+.md-header__title {
+  flex-grow: 0.07;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .md-header__title {
+    flex-grow: 0.30;
+  }
+}
+
+.md-search {
+  flex: 0;
+  max-width: 500px;
+  /* height: 36px; */
+}
+.placeholder {
+  flex: 1;
+}
+
+.md-search__form {
+  height: 36px;
+  align-content: center;
+}
+.md-search__form input {
+  background-color: var(--md-default-bg-color);
+  box-shadow: 0 0 0 0 rgb(0 0 0 / 0%), 0 0 0 0 rgb(0 0 0 / 0%), 0 0 0 0 rgb(0 0 0 / 0%), 0 0 0 1px rgb(60 66 87 / 16%), 0 0 0 0 rgb(0 0 0 / 0%), 0 0 0 0 rgb(0 0 0 / 0%), 0 0 0 0 rgb(0 0 0 / 0%);
+  border-radius: 2px;
+  /* color: rgb(60, 66, 87); */
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.md-search__inner {
+  float: left;
+  width: 17.7rem;
+  /* padding-left: 1rem; */
+  margin-left: 1rem;
+}
+
+.md-search__icon.md-icon svg {
+  height: 0.9rem;
+  width: 0.9rem;
+  opacity: 0.5;
+  margin-top: 2px;
+}
+
+@media screen and (min-width: 60em) {
+    [dir=ltr] .md-search__input {
+        padding-left: 1.8rem;
+    }
+
+    [dir=rtl] .md-search__input {
+        padding-right: 1.8rem
+    }
+
+    .md-search__input {
+        color: inherit;
+        font-size: .8rem
+    }
+
+    .md-search__input::placeholder {
+        color: var(--md-primary-bg-color--light)
+    }
+
+    .md-search__input+.md-search__icon {
+        color: var(--md-primary-bg-color)
+    }
+
+    [data-md-toggle=search]:checked~.md-header .md-search__input {
+        text-overflow: clip
+    }
+
+    [data-md-toggle=search]:checked~.md-header .md-search__input+.md-search__icon,[data-md-toggle=search]:checked~.md-header .md-search__input::placeholder {
+        color: var(--md-default-fg-color--light)
+    }
+}
+</style>
+
+
+{% set class = "md-header" %}
+{% if "navigation.tabs.sticky" in features %}
+  {% set class = class ~ " md-header--lifted" %}
+{% endif %}
+
+<header class="{{ class }}" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="{{ lang.t('header.title') }}"
+  >
+
+    <a
+      href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
+      title="{{ config.site_name | e }}"
+      class="md-header__button md-logo"
+      aria-label="{{ config.site_name }}"
+      data-md-component="logo"
+    >
+      {% include "partials/logo.html" %}
+    </a>
+
+    <label class="md-header__button md-icon" for="__drawer">
+      {% include ".icons/material/menu" ~ ".svg" %}
+    </label>
+
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            {{ config.site_name }}
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            {% if page and page.meta and page.meta.title %}
+              {{ page.meta.title }}
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    {% if "search" in config["plugins"] %}
+      <label class="md-header__button md-icon" for="__search">
+        {% include ".icons/material/magnify.svg" %}
+      </label>
+
+      {% include "partials/search.html" %}
+    {% endif %}
+
+    {% if config.repo_url %}
+      <div class="md-header__source">
+        {% include "partials/source.html" %}
+      </div>
+    {% endif %}
+
+    <div class="placeholder"></div>
+
+    {% if not config.theme.palette is mapping %}
+      <form class="md-header__option" data-md-component="palette">
+        {% for option in config.theme.palette %}
+          {% set primary = option.primary | replace(" ", "-") | lower %}
+          {% set accent  = option.accent  | replace(" ", "-") | lower %}
+          <input
+            class="md-option"
+            data-md-color-media="{{ option.media }}"
+            data-md-color-scheme="{{ option.scheme }}"
+            data-md-color-primary="{{ primary }}"
+            data-md-color-accent="{{ accent }}"
+            {% if option.toggle %}
+              aria-label="{{ option.toggle.name }}"
+            {% else  %}
+              aria-hidden="true"
+            {% endif %}
+            type="radio"
+            name="__palette"
+            id="__palette_{{ loop.index }}"
+          />
+          {% if option.toggle %}
+            <label
+              class="md-header__button md-icon"
+              title="{{ option.toggle.name }}"
+              for="__palette_{{ loop.index0 or loop.length }}"
+              hidden
+            >
+              {% include ".icons/" ~ option.toggle.icon ~ ".svg" %}
+            </label>
+          {% endif %}
+        {% endfor %}
+      </form>
+    {% endif %}
+
+    {% if config.extra.alternate %}
+      <div class="md-header__option"></form>
+        <div class="md-select">
+          {% set icon = config.theme.icon.alternate or "material/translate" %}
+          <button
+            class="md-header__button md-icon"
+            aria-label="{{ lang.t('select.language.title') }}"
+          >
+            {% include ".icons/" ~ icon ~ ".svg" %}
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              {% for alt in config.extra.alternate %}
+                <li class="md-select__item">
+                  <a
+                    href="{{ alt.link | url }}"
+                    hreflang="{{ alt.lang }}"
+                    class="md-select__link"
+                  >
+                    {{ alt.name }}
+                  </a>
+                </li>
+                {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if config.repo_url %}
+      <div class="md-header__source">
+        {% include "partials/source.html" %}
+      </div>
+    {% endif %}
+  </nav>
+
+  {% if "navigation.tabs.sticky" in features %}
+    {% if "navigation.tabs" in features %}
+      {% include "partials/tabs.html" %}
+    {% endif %}
+  {% endif %}
+</header>

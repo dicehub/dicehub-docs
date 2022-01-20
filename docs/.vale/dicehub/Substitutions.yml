@@ -1,0 +1,27 @@
+---
+# Error: dicehub.SubstitutionWarning
+#
+# Warn if short version of a term is used.
+#
+# Ref: https://errata-ai.gitbook.io/vale/getting-started/styles#substitution
+
+extends: substitution
+message: Use '%s' instead of '%s'
+level: error
+ignorecase: true
+# swap maps tokens in form of bad: good
+swap:
+  Dicehub: dicehub
+  DiceHub: dicehub
+  param: parameter
+  pg: PostgreSQL
+  postgres: PostgreSQL
+  styleguide: style guide
+  yaml: YAML
+  url: URL
+  http: HTTP
+  eslint: ESLint
+  Eslint: ESLint
+  Editorconfig: EditorConfig
+  editorconfig: EditorConfig
+  classnames: classNames

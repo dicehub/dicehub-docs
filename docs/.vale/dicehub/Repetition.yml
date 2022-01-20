@@ -1,0 +1,13 @@
+---
+# Error: dicehub.Repetition
+#
+# Checks for repeated occurrences of its tokens, for example `and and`.
+#
+# Ref: https://errata-ai.gitbook.io/vale/getting-started/styles#repetition
+
+extends: repetition
+message: "'%s' is repeated!"
+level: error
+alpha: true
+tokens:
+  - '[^\s]+'

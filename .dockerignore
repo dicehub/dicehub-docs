@@ -1,0 +1,15 @@
+# Ignore everything
+*
+
+# Include
+!CHANGELOG.md
+!docs/
+!extra_sass/
+!scripts/
+!theme/
+!.vale.ini
+!mkdocs.yml
+!.markdownlint.yaml
+!requirements
+!Makefile
+!.git

@@ -1,0 +1,15 @@
+---
+# Error: dicehub.OxfordComma
+#
+# Checks for the OxfordComma:
+# `Let's eat grandpa.` should be `Let's eat, grandpa.`
+#
+# Ref: https://errata-ai.gitbook.io/vale/getting-started/styles
+
+extends: existence
+message: "Use the Oxford comma in '%s'."
+scope: sentence
+level: warning
+raw:
+  - '(?:[\w-_` ]+,){2,}(?:[\w-_` ]+) (and |or )'
+

@@ -1,0 +1,334 @@
+{% extends "main.html" %}
+
+<!-- Render hero under tabs -->
+{% block tabs %}
+  {{ super() }}
+
+<!-- Additional styles for landing page -->
+<style>
+
+/* Application header should be static for the landing page */
+.md-header {
+  position: initial;
+}
+
+/* Remove spacing, as we cannot hide it completely */
+.md-main__inner {
+  margin: 0;
+}
+
+/* Hide main content for now */
+.md-content {
+  display: none;
+}
+
+/* Hide table of contents */
+@media screen and (min-width: 60em) {
+  .md-sidebar--secondary {
+    display: none;
+  }
+}
+
+/* Hide navigation */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    display: none;
+  }
+}
+
+/* Get started button */
+.md-typeset .md-button--primary {
+    color: var(--md-primary-fg-color);
+    background-color: var(--md-primary-bg-color);
+    border-color: var(--md-primary-bg-color);
+}
+.md-typeset .md-button--primary:hover {
+  color: var(--md-primary-bg-color);
+  background-color: var(--md-primary-fg-color);
+  border-color: var(--md-primary-bg-color);
+}
+
+/* Hero content */
+.mdx-hero {
+  max-width: 1170px;;
+  /* display: flex; */
+  /* padding: .4rem; */
+  padding-left: 2.8rem;
+  padding-right: 2.8rem;
+  padding-top: 2.5rem;
+  margin: 0 auto;
+  text-align: center;
+  /* text-align: left; */
+}
+.mdx-hero h1 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 46px;
+  /* color: #000; */
+}
+.mdx-hero__content__description {
+  /* color: #3c4257; */
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  padding-top: 12px;
+  padding-bottom: 32px;
+}
+/* .mdx-hero__content__description span {
+  color: #1f88d4;
+  background: #1f88d4;
+  background: linear-gradient(90deg,#1f88d4 0,#714cb4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+} */
+
+.mdx-hero__image {
+  max-width: 1170px;
+  min-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.mdx-hero__image img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+
+.mdx-middle {
+  max-width: 1170px;;
+  display: flex;
+  /* padding: .4rem; */
+  padding-left: 2.8rem;
+  padding-right: 2.8rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  margin: 0 auto;
+  /* text-align: center; */
+  text-align: left;
+  align-items: flex-start;
+}
+.mdx-middle p {
+  margin-right: 20px;
+  font-size: 22px;
+}
+
+
+/* Secondary section */
+/* ----------------- */
+.mdx-secondary-section {
+  background: rgb(245, 245, 245) none repeat scroll 0% 0%;
+  border-top: 1px solid rgb(222, 222, 222);
+  border-bottom: 1px solid rgb(222, 222, 222)
+}
+@media screen and (max-width: 1012px) {
+  .mdx-secondary-section {
+    display: block;
+  }
+}
+
+.mdx-secondary-section .cc {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 40px;
+  max-width: 1280px;
+}
+
+.mdx-secondary-section .cc section {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: normal;
+  padding: 88px 0px 116px;
+}
+
+.mdx-secondary-section .cc section.follow {
+  padding-top: 0px;
+}
+
+.mdx-secondary-section .cc section .wrapper {
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1012px) {
+  .mdx-secondary-section .cc section .wrapper {
+    display: block;
+  }
+}
+
+.mdx-secondary-section .cc section .wrapper h3 {
+  color: rgb(38, 38, 38);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 46px;
+  letter-spacing: normal;
+  margin-bottom: 12px;
+}
+
+.mdx-secondary-section .cc section .wrapper h4 {
+  color: rgb(38, 38, 38);
+}
+
+.mdx-secondary-section .cc section .wrapper p {
+  color: rgb(92, 92, 92);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: normal;
+  margin-bottom: 16px;
+}
+
+.mdx-secondary-section .cc section .wrapper .image-wrapper {
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 48px;
+  border: 1px solid rgb(222, 222, 222);
+  box-shadow: rgba(202, 202, 202, 0.15) 0px 0px 0px 6px;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+
+.mdx-secondary-section .cc section .wrapper h3 {
+  color: rgb(38, 38, 38);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 46px;
+  letter-spacing: normal;
+  margin-bottom: 12px;
+}
+
+.mdx-secondary-section .cc section .wrapper .first-column {
+  padding-right: 100px;
+  flex: 0 1 auto;
+  height: auto;
+  width: 50%;
+}
+
+@media screen and (max-width: 1012px) {
+  .mdx-secondary-section .cc section .wrapper .first-column {
+    padding-right: 0px;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}
+
+.mdx-secondary-section .cc section .wrapper .second-column {
+  flex: 0 1 auto;
+  height: auto;
+  width: 50%;
+}
+
+@media screen and (max-width: 1012px) {
+  .mdx-secondary-section .cc section .wrapper .second-column {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}
+
+.wrapper a {
+  transition: color 125ms;
+  color: rgb(61, 61, 61);
+  background: rgba(0, 0, 0, 0.05) none repeat scroll 0% 0%;
+  padding: 2px 6px;
+  margin: 0px 1px;
+  border-radius: 4px;
+  display: inline;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.wrapper a:hover {
+  color: var(--md-typeset-a-color);
+  background: var(--md-accent-fg-color--transparent);
+}
+
+</style>
+
+  <!-- Hero for landing page -->
+  <section class="mdx-container">
+    <div class="md-grid md-typeset">
+      <div class="mdx-hero">
+
+        <!-- Hero content -->
+        <div class="mdx-hero__content">
+          <h1>dicehub Documentation</h1>
+          <div class="mdx-hero__content__description">Explore our <span>guides and examples</span> for dicehub.</div>
+          <a
+            href="{{ page.next_page.url | url }}"
+            title="{{ page.next_page.title | e }}"
+            class="md-button md-button--primary"
+          >
+            Get started
+            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" style="margin-left:2px"><path d="M1 5.16772H9.5M9.5 5.16772L6.5 1.66772M9.5 5.16772L6.5 8.66772" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mdx-container mdx-middle">
+    <div class="mdx-hero__image">
+      <img
+        src="/assets/images/screen.png"
+        alt=""
+        draggable="false"
+      >
+    </div>
+  </section>
+
+  <section class="mdx-container mdx-secondary-section">
+    <div class="cc">
+      <section>
+        <div class="wrapper">
+          <div class="first-column">
+            <h3>Get started with the basics</h3>
+            <p>
+              dicehub is a real-time collaborative
+              CFD (Computational Fluid Dynamics) simulations platform which simplifies your engineering workflow, offers massive parallel scaling and runs in your browser.
+            </p>
+            <p>
+              Learn how to create your first application and quickly get started with dicehub.
+            </p>
+            <p>
+              Focus your time on analyzing CFD results instead of dealing with the complex setup of a simulation. Divide your tasks into <a href="docs/concepts/project#what-is-a-projects">projects</a>, use <a href="docs/concepts/group#what-is-a-group">groups</a> if you have a larger organization and use pre-defined templates to create a mesh or conduct a steady-state simulation.
+            </p>
+          </div>
+          <div class="second-column">
+            <div class="image-wrapper">
+              <img
+                src="/assets/images/screen-main.png"
+                alt=""
+                draggable="false"
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}{% endblock %}
+
+<!-- Application footer -->
+{% block footer %}
+  {{ super() }}
+{% endblock %}

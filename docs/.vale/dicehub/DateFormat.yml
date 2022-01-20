@@ -1,0 +1,21 @@
+---
+# Error: dicehub.DateFormat
+#
+# Make sure dates are written out.
+#
+# Ref: https://developers.google.com/style/dates-times
+# Not recommended: 02.12.2017
+# Not recommended: 12/02/2017
+# Recommended: February 12, 2017
+# Recommended: Sunday, February 12, 2017
+#
+# Ref: https://errata-ai.gitbook.io/vale/getting-started/styles#spelling
+
+extends: existence
+message: "Use 'July 31, 2016' format, not '%s'."
+ignorecase: true
+level: error
+nonword: true
+tokens:
+  - '\d{1,2}(?:\.|/)\d{1,2}(?:\.|/)\d{4}'
+  - '\d{1,2} (?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)|May|Jun(?:e)|Jul(?:y)|Aug(?:ust)|Sep(?:tember)?|Oct(?:ober)|Nov(?:ember)?|Dec(?:ember)?) \d{4}'

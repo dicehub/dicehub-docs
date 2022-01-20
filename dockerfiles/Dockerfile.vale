@@ -1,0 +1,9 @@
+FROM registry.dicehub.org/dicehub-com/docker-images/dicehub-base-images:markdownlint-0.30.0-vale-2.13.0
+
+WORKDIR /app
+
+COPY ./docs/ ./docs/
+COPY .vale.ini .
+
+ENV FILES="./docs/guide"
+RUN vale --config .vale.ini $FILES

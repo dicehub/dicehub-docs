@@ -1,0 +1,18 @@
+---
+# Error: dicehub.Consistency
+#
+# Checks if a key and its value (e.g., "advisor" and "adviser") don't both
+# occur in its scope.
+#
+# Ref: https://errata-ai.gitbook.io/vale/getting-started/styles#consistency
+
+extends: consistency
+message: "Inconsistent spelling of '%s'"
+level: error
+scope: text
+ignorecase: true
+nonword: false
+# We only want one of these to appear.
+either:
+  advisor: adviser
+  centre: center
