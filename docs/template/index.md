@@ -1,4 +1,4 @@
-# Pre-defined templates
+# Overview
 
 dicehub is offering multiple templates with best possible settings for most
 simulation cases.

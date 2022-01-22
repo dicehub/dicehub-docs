@@ -37,9 +37,10 @@ theme:
     - navigation.top
     - search.highlight
     - search.share
-    # - navigation.indexes
+    - navigation.indexes
     # - header.autohide
     # - toc.integrate
+    - navigation.expand
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -149,15 +150,16 @@ nav:
     - template/index.md
     - Meshing:
       - Hex-dominant mesher:
-        - template/hex_dominant_mesher/index.md
-        - template/hex_dominant_mesher/geometries.md
-        - template/hex_dominant_mesher/background_mesh.md
-        - template/hex_dominant_mesher/material_point.md
-        - template/hex_dominant_mesher/edges_refinement.md
-        - template/hex_dominant_mesher/surface_refinement.md
-        - template/hex_dominant_mesher/volume_refinement.md
-        - template/hex_dominant_mesher/boundary_layers.md
-        - template/hex_dominant_mesher/cell_zones.md
+        - Overview: template/hex_dominant_mesher/index.md
+        - Main Steps:
+          - template/hex_dominant_mesher/geometries.md
+          - template/hex_dominant_mesher/background_mesh.md
+          - template/hex_dominant_mesher/material_point.md
+          - template/hex_dominant_mesher/edges_refinement.md
+          - template/hex_dominant_mesher/surface_refinement.md
+          - template/hex_dominant_mesher/volume_refinement.md
+          - template/hex_dominant_mesher/boundary_layers.md
+          - template/hex_dominant_mesher/cell_zones.md
   # - User documentation:
   #   - User Docs: user/index.md
   #   - Features:
