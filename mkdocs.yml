@@ -140,7 +140,8 @@ nav:
     - Pricing:
       - guide/pricing/plans.md
     - UI / UX:
-      - guide/ui/index.md
+      - guide/ui/user_dashboard_ui.md
+      - guide/ui/application_ui.md
     - Resources:
       - guide/resources/changelog.md
       - guide/resources/roadmap.md
@@ -156,6 +157,7 @@ nav:
         - template/hex_dominant_mesher/surface_refinement.md
         - template/hex_dominant_mesher/volume_refinement.md
         - template/hex_dominant_mesher/boundary_layers.md
+        - template/hex_dominant_mesher/cell_zones.md
   # - User documentation:
   #   - User Docs: user/index.md
   #   - Features:

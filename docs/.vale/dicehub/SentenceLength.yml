@@ -10,5 +10,5 @@ extends: occurrence
 message: 'Shorter sentences improve readability (max 25 words).'
 scope: sentence
 level: warning
-max: 25
+max: 35
 token: \b(\w+)\b
