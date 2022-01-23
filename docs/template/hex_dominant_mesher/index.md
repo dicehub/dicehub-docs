@@ -31,4 +31,3 @@ The steps followed by the `snappyHexMesh` utility can be summarized as:
    Finally, the cells adjacent to the geometric surface are modified to satisfy the [boundary layer](/boundary_layer.md) requirements. Additional layers in the boundary region are created.
 
 [^1]: Src: [OpenFOAM entry on Wikipedia](https://en.wikipedia.org/wiki/OpenFOAM)
-
