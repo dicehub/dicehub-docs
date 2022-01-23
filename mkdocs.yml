@@ -41,6 +41,7 @@ theme:
     # - header.autohide
     # - toc.integrate
     - navigation.expand
+    - navigation.tracking
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -129,10 +130,10 @@ nav:
   - Home: index.md
   # - Documentation: documentation/index.md
   - Guide:
-    - guide/index.md
+    - guide/guide.md
     - guide/quick_start.md
     - Essentials:
-      - guide/essentials/index.md
+      - guide/essentials/namespaces.md
       - guide/essentials/projects.md
       - guide/essentials/groups.md
       - guide/essentials/templates.md
@@ -147,19 +148,20 @@ nav:
       - guide/resources/changelog.md
       - guide/resources/roadmap.md
   - Templates:
-    - template/index.md
+    - template/overview.md
     - Meshing:
       - Hex-dominant mesher:
         - Overview: template/hex_dominant_mesher/index.md
         - Main Steps:
-          - template/hex_dominant_mesher/geometries.md
-          - template/hex_dominant_mesher/background_mesh.md
-          - template/hex_dominant_mesher/material_point.md
-          - template/hex_dominant_mesher/edges_refinement.md
-          - template/hex_dominant_mesher/surface_refinement.md
-          - template/hex_dominant_mesher/volume_refinement.md
-          - template/hex_dominant_mesher/boundary_layers.md
-          - template/hex_dominant_mesher/cell_zones.md
+          - template/hex_dominant_mesher/main_steps/index.md
+          - template/hex_dominant_mesher/main_steps/geometries.md
+          - template/hex_dominant_mesher/main_steps/background_mesh.md
+          - template/hex_dominant_mesher/main_steps/material_point.md
+          - template/hex_dominant_mesher/main_steps/edges_refinement.md
+          - template/hex_dominant_mesher/main_steps/surface_refinement.md
+          - template/hex_dominant_mesher/main_steps/volume_refinement.md
+          - template/hex_dominant_mesher/main_steps/boundary_layers.md
+          - template/hex_dominant_mesher/main_steps/cell_zones.md
   # - User documentation:
   #   - User Docs: user/index.md
   #   - Features:
