@@ -39,9 +39,16 @@ The current version of dicehub can be used in the following way:
 - Conducting incompressible steady state fluid flow simulations
 - Sharing your results with other simulation engineers around the world
 - Collaborating with other simulation engineers in real-time
-- Running massive parallel simulation on multiple machines in parallel
+- Running massive parallel simulations on multiple machines
 - Manipulating flows to automate your simulation workflows
 - Managing permissions and roles in projects and groups
+
+Other notable features include:
+
+- dicehub is a cloud-native application
+- No cloud-vendor lock-in. You can run dicehub on any cloud provider 
+  or HPC center.
+- Simple local deployment with docker.
 
 ## Our goals
 
@@ -58,6 +65,6 @@ In recent years expensive experiments have been more and more replaced by virtua
 
 ## Is dicehub the right solution for you?
 
-As with everything: **it depends** 
+As with everything: **It depends**. 
 
-There are many other software solutions, libraries and platforms out there. Each one has features that might help you solve you current problem. The best way to find out if dicehub is something you might need in your workflow is to try to create a simple simulation example, test some of the functions dicehub offers and go on to more complex cases which you are trying to solve. dicehub is still in early stages of development, so the amount of solvers is limited for right now. If you are an expert CFD simulation engineer you are probably better suited with the tools you already know, but dicehub could be an additional tool to share and showcase your results. The possibility for dicehub to quickly evolve, add new templates and workflows, is what allows it to adapt to your needs, and offer you solutions that are not available right now.
+There are many other software solutions, libraries and platforms out there. Each one has features that might help you solve you current problem. The best way to find out if dicehub is something you might need in your workflow is to try to create a simple simulation example, test some of the functions dicehub offers and go on to more complex cases which you are trying to solve. dicehub is still in early stages of development, so the amount of solvers is limited for right now. If you are an expert CFD simulation engineer you are probably better suited with the tools you already know, but dicehub could be an additional tool to share and showcase your results. The possibility for dicehub to quickly evolve, add new templates and workflows, is what allows us to customize it to your needs, and offer you solutions that may not be available right now.

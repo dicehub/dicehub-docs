@@ -1,5 +1,8 @@
 # dicehub-docs
 
+**This is the WIP branch of the brand new dicehub documentation at docs.dicehub.com. 
+The content is under heavy updates and re-organization.**
+
 Public documentation for dicehub.
 
 ## Development

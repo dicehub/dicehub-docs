@@ -31,22 +31,3 @@ The steps followed by the `snappyHexMesh` utility can be summarized as:
    Finally, the cells adjacent to the geometric surface are modified to satisfy the [boundary layer](/boundary_layer.md) requirements. Additional layers in the boundary region are created.
 
 [^1]: Src: [OpenFOAM entry on Wikipedia](https://en.wikipedia.org/wiki/OpenFOAM)
-
-## Main steps
-
-![Image title](./images/hex_dominant_mesher_screen.png){ .zoom .image-wrapper }
-
-To simplify and lower the barrier of entry for new users, in dicehub you can easily 
-setup your case with the following steps:
-
-1. **Geometries**:  
-   [Add or import geometry for meshing](./geometries.md)
-1. **Background Mesh**:  
-   [Define the extent of the computational domain and a base level mesh density.](./background_mesh.md)
-1. **Material Point**:  
-   [Specify the point location in the enclosed area where mesh cells are generated](./material_point.md)
-1. **Edges refinement**
-1. **Surface refinement**
-1. **Volume refinment**
-1. **Boundary Layers**
-1. **Cell Zones**

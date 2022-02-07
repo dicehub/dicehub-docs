@@ -105,7 +105,7 @@ view to the selected plane using the button **Reset Camera to Normal**.
 | ![Object](./images/geometries_plate_highlighted.png){ .zoom .image-wrapper } | ![Object properties](./images/geometries_plate_properties.png){ .zoom .image-wrapper } |
 
 The plate entity is defined by a point, a span, and a normal. The point does 
-**not** represent the center of the plate. Rather, it is one of the vertices 
+not represent the center of the plate. Rather, it is one of the vertices 
 of the plate from which the input spans are measured. Finally, the plate's 
 normal can be chosen from three available options: 
 **X Normal**, **Y Normal** and **Z Normal**.
