@@ -46,6 +46,26 @@
 
   &__title {
     margin-left: 0 !important;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  &__topic {
+    position: relative;
+  }
+
+  &__topic + &__topic {
+    display: none;
+  }
+
+  &__title[data-md-state="active"] .md-header__topic {
+    opacity: 1;
+    display: none;
+  }
+
+  &__title[data-md-state="active"] .md-header__topic + .md-header__topic {
+    opacity: 1;
+    display: flex;
   }
 }
 
@@ -53,10 +73,6 @@
 .md-header__inner {
   margin-left: 0.2rem;
   max-width: 100%;
-}
-
-.md-header__title {
-  flex-grow: 0.07;
 }
 
 .md-tabs__link {

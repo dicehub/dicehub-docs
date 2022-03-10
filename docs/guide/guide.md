@@ -7,7 +7,7 @@ Welcome to the official [dicehub](https://about.dicehub.com) documentation.
 | Topic                                             | Description                                                                         |
 | :------------------------------------------------ | :---------------------------------------------------------------------------------- |
 | [**Quick Start**](./quick_start.md) | A quick introduction to dicehub with a simple meshing example                                                    |
-| [**Essentials**](./essentials/index.md)           | Main concepts and features explained in an understandable way for all dicehub users |
+| [**Essentials**](./essentials/namespaces.md)           | Main concepts and features explained in an understandable way for all dicehub users |
 | [**Pricing**](./pricing/plans.md)           | The current pricing structure for dicehub services |
 
 ---
