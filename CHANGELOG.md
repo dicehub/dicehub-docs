@@ -1,2 +1,3 @@
+- [Documentation] Fix bugs before release. #6 !3
 - [Templates] Add documentation on hex-dominant mesher. #5 !2
 - Setup mkdocs to generate the documentation website. #1 !1
