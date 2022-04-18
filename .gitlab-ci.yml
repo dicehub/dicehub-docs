@@ -152,3 +152,30 @@ deploy:staging:
   environment:
     name: staging
     url: https://docs.staging.dicehub.com
+
+#
+# Deploy site to production
+#
+
+deploy:production:
+  extends:
+    - .docker_prepare
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+  script:
+    - docker pull $IMAGE_NAME
+    - docker run --rm
+      -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+      -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+      $IMAGE_NAME
+      bash -c "aws s3 sync --exact-timestamps /app/site/ s3://www-docs-production-dicehub-com/ && aws cloudfront create-invalidation --distribution-id ${PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'"
+  dependencies:
+    - image:docs-release
+    - image:docs-lint-markdown
+    - image:docs-lint-vale
+  environment:
+    name: staging
+    url: https://docs.dicehub.com
