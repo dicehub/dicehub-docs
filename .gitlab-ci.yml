@@ -179,7 +179,7 @@ deploy:staging:
     - image:docs-lint-markdown
     - image:docs-lint-vale
   environment:
-    name: staging
+    name: production
     url: https://docs.dicehub.com
 
 
