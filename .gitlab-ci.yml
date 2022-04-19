@@ -34,6 +34,7 @@ workflow:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_COMMIT_BRANCH == "main"'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+    - if: '$CI_COMMIT_TAG =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
 
 ###############################################
 #           Docker images builds              #
@@ -120,6 +121,7 @@ image:docs-release:
   # Only branches with versions like 1.0.0
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+    - if: '$CI_COMMIT_TAG =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
 
 
 ###############################################
