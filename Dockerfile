@@ -30,7 +30,7 @@ RUN pip install --no-cache-dir -r requirements/requirements.txt
 COPY . .
 
 # Copy files for versioning
-COPY index.html site/
+# COPY index.html site/
 COPY versions.json site/
 
 # Build site

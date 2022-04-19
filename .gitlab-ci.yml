@@ -141,7 +141,7 @@ deploy:staging:
   variables:
     GIT_STRATEGY: none
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
-    VERSION: "latest"
+    VERSION: ""
   script:
     - docker pull $IMAGE_NAME
     - docker run --rm
@@ -191,22 +191,7 @@ deploy:production-latest:
   variables:
     GIT_STRATEGY: none
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
-    VERSION: latest
-  # script:
-  #   - docker pull $IMAGE_NAME
-  #   - docker run --rm
-  #     -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-  #     -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-  #     -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
-  #     $IMAGE_NAME
-  #     bash -c "aws s3 sync --exact-timestamps /app/site/ s3://www-docs-production-dicehub-com/ && aws cloudfront create-invalidation --distribution-id ${PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'"
-  # dependencies:
-  #   - image:docs-release
-  #   - image:docs-lint-markdown
-  #   - image:docs-lint-vale
-  # environment:
-  #   name: production
-  #   url: https://docs.dicehub.com
+    VERSION: ""
   only:
     - 7-release-add-release-procedure
 
@@ -218,20 +203,5 @@ deploy:production:
   variables:
     GIT_STRATEGY: none
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
-  # script:
-  #   - docker pull $IMAGE_NAME
-  #   - docker run --rm
-  #     -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-  #     -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-  #     -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
-  #     $IMAGE_NAME
-  #     bash -c "aws s3 sync --exact-timestamps /app/site/ s3://www-docs-production-dicehub-com/ && aws cloudfront create-invalidation --distribution-id ${PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'"
-  # dependencies:
-  #   - image:docs-release
-  #   - image:docs-lint-markdown
-  #   - image:docs-lint-vale
-  # environment:
-  #   name: production
-  #   url: https://docs.dicehub.com
   only:
     - /^v?[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-.]+)?$/
