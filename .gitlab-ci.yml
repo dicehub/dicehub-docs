@@ -141,7 +141,7 @@ deploy:staging:
   variables:
     GIT_STRATEGY: none
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
-    VERSION: ""
+    VERSION: "latest"
   script:
     - docker pull $IMAGE_NAME
     - docker run --rm
@@ -191,7 +191,7 @@ deploy:production-latest:
   variables:
     GIT_STRATEGY: none
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
-    VERSION: ""
+    VERSION: latest
   only:
     - 7-release-add-release-procedure
 
