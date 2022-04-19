@@ -3,6 +3,8 @@ FROM python:3.9.6-slim-buster as base
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV TZ="CET"
 
+ENV VERSION="latest"
+
 WORKDIR /app
 
 RUN \
@@ -27,5 +29,9 @@ RUN pip install --no-cache-dir -r requirements/requirements.txt
 # Copy source code
 COPY . .
 
+# Copy files for versioning
+COPY index.html site/
+COPY versions.json site/
+
 # Build site
-RUN make mkdocs-build
+RUN mkdocs build --site-dir site/${VERSION}
