@@ -3,7 +3,7 @@ FROM python:3.9.6-slim-buster as base
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV TZ="CET"
 
-ENV VERSION="latest"
+ARG VERSION="latest"
 
 WORKDIR /app
 
