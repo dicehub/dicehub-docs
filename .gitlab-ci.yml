@@ -17,23 +17,24 @@ stages:
   retry:
     max: 2
 
-#
-# workflow:rules to prevent duplicate pipelines when pushing to a branch with an open MR.
-#
-workflow:
-  rules:
-    # Prevent branch pipelines if an MR is open on the branch.
-    - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push" && $CI_OPEN_MERGE_REQUESTS
-      when: never
-    # Allow merge request and scheduled pipelines.
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
-    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
-    - if: '$CI_PIPELINE_SOURCE == "trigger"'
-    # Allow branch pipelines for the default branch, stable branches named XX.X, and review app branches.
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-    - if: '$CI_COMMIT_BRANCH == "main"'
-    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+# #
+# # workflow:rules to prevent duplicate pipelines when pushing to a branch with an open MR.
+# #
+# workflow:
+#   rules:
+#     # Prevent branch pipelines if an MR is open on the branch.
+#     - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push" && $CI_OPEN_MERGE_REQUESTS
+#       when: never
+#     # Allow merge request and scheduled pipelines.
+#     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+#     - if: '$CI_PIPELINE_SOURCE == "schedule"'
+#     - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+#     - if: '$CI_PIPELINE_SOURCE == "trigger"'
+#     # Allow branch pipelines for the default branch, stable branches named XX.X, and review app branches.
+#     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+#     - if: '$CI_COMMIT_BRANCH == "main"'
+#     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+#     - if: '$CI_COMMIT_TAG =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
 
 ###############################################
 #           Docker images builds              #
@@ -94,11 +95,14 @@ image:docs-latest:
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
     DOCKERFILE: Dockerfile
+    VERSION: latest
   script:
-    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker build --build-arg VERSION=$VERSION -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   environment:
     name: registry/latest
+  only:
+    - branches
 
 #
 # Main docs image
@@ -112,31 +116,22 @@ image:docs-release:
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
     DOCKERFILE: Dockerfile
+    VERSION: $CI_COMMIT_TAG
   script:
-    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker build --build-arg VERSION=$VERSION -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   environment:
-    name: registry/latest
-  # Only branches with versions like 1.0.0
-  rules:
-    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+    name: registry/$CI_COMMIT_TAG
+  only:
+    - /^v?[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-.]+)?$/
 
 
 ###############################################
-#                 Deployment                  #
+#             Deployment (Staging)            #
 ###############################################
 
-#
-# Deploy site to staging
-#
-
-deploy:staging:
-  extends:
-    - .docker_prepare
+.common_staging:
   stage: deploy
-  variables:
-    GIT_STRATEGY: none
-    IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
   script:
     - docker pull $IMAGE_NAME
     - docker run --rm
@@ -146,24 +141,41 @@ deploy:staging:
       $IMAGE_NAME
       bash -c "aws s3 sync --exact-timestamps /app/site/ s3://www-docs-staging-dicehub-com/ && aws cloudfront create-invalidation --distribution-id ${STAGING_CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'"
   dependencies:
-    - image:docs-latest
+    - image:docs-release
     - image:docs-lint-markdown
     - image:docs-lint-vale
   environment:
     name: staging
     url: https://docs.staging.dicehub.com
 
-#
-# Deploy site to production
-#
-
-deploy:production:
+deploy:staging-latest:
   extends:
     - .docker_prepare
-  stage: deploy
+    - .common_staging
   variables:
     GIT_STRATEGY: none
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+    VERSION: latest
+  only:
+    - branches
+
+deploy:staging:
+  extends:
+    - .docker_prepare
+    - .common_staging
+  variables:
+    GIT_STRATEGY: none
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+  only:
+    - /^v?[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-.]+)?$/
+
+
+###############################################
+#             Deployment (Production)         #
+###############################################
+
+.common_production:
+  stage: deploy
   script:
     - docker pull $IMAGE_NAME
     - docker run --rm
@@ -177,5 +189,27 @@ deploy:production:
     - image:docs-lint-markdown
     - image:docs-lint-vale
   environment:
-    name: staging
+    name: production
     url: https://docs.dicehub.com
+
+
+deploy:production-latest:
+  extends:
+    - .docker_prepare
+    - .common_production
+  variables:
+    GIT_STRATEGY: none
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+    VERSION: latest
+  only:
+    - dev
+
+deploy:production:
+  extends:
+    - .docker_prepare
+    - .common_production
+  variables:
+    GIT_STRATEGY: none
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+  only:
+    - /^v?[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-.]+)?$/

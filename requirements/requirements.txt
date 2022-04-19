@@ -4,9 +4,9 @@
 #
 #    pip-compile --allow-unsafe --generate-hashes --output-file=requirements/requirements.txt requirements/requirements.in
 #
-awscli==1.22.35 \
-    --hash=sha256:1ac31c94b87f56d3da3630fe5c32aa4d87925f6f51d9a452ec87fd1bdd7c3966 \
-    --hash=sha256:c936f3a4adc0115b0fd584d7d9e7bb7c5f111c6eb7dcb8b7c6b3b895b47e37ef
+awscli==1.22.97 \
+    --hash=sha256:2120b7d89721469483551e0f010a16c423bb27b6b28e69e18b4d37e93f7ac01c \
+    --hash=sha256:f714e3648cf3670e0d39e528bc0d96781949e7f6dca76b2e526e980350d72c55
     # via -r requirements/requirements.in
 babel==2.9.1 \
     --hash=sha256:ab49e12b91d937cd11f0b67cb259a57ab4ad2b59ac7a3b41d6c06c0ac5b0def9 \
@@ -18,9 +18,9 @@ beautifulsoup4==4.10.0 \
     # via
     #   mkdocs-extra-sass-plugin
     #   mkdocs-mermaid2-plugin
-botocore==1.23.35 \
-    --hash=sha256:4cbd668a28e489c8d1909f621684f070309b3ae990667094b344e6ea72337795 \
-    --hash=sha256:5be6ba6c5ea71c256da8a5023bf9c278847c4b90fdb40f2c4c3bdb21ca11ff28
+botocore==1.24.42 \
+    --hash=sha256:14aee41c8bf59d2dd2d89e8751fa37d3c95dcb92707d1966aa02697e914c1417 \
+    --hash=sha256:a2baa9484bbaee96ef312c049b8e360badcab58329e487b57567644a571b5f4a
     # via
     #   awscli
     #   s3transfer
@@ -190,9 +190,9 @@ mergedeep==1.3.4 \
     --hash=sha256:0096d52e9dad9939c3d975a774666af186eda617e6ca84df4c94dec30004f2a8 \
     --hash=sha256:70775750742b25c0d8f36c55aed03d24c3384d17c951b3175d898bd778ef0307
     # via mkdocs
-mkdocs==1.2.3 \
-    --hash=sha256:89f5a094764381cda656af4298727c9f53dc3e602983087e1fe96ea1df24f4c1 \
-    --hash=sha256:a1fa8c2d0c1305d7fc2b9d9f607c71778572a8b110fb26642aa00296c9e6d072
+mkdocs==1.3.0 \
+    --hash=sha256:26bd2b03d739ac57a3e6eed0b7bcc86168703b719c27b99ad6ca91dc439aacde \
+    --hash=sha256:b504405b04da38795fec9b2e5e28f6aa3a73bb0960cb6d5d27ead28952bd35ea
     # via
     #   -r requirements/requirements.in
     #   mkdocs-extra-sass-plugin
@@ -205,13 +205,13 @@ mkdocs-extra-sass-plugin==0.1.0 \
     --hash=sha256:10aa086fa8ef1fc4650f7bb6927deb7bf5bbf5a2dd3178f47e4ef44546b156db \
     --hash=sha256:cca7ae778585514371b22a63bcd69373d77e474edab4b270cf2924e05c879219
     # via -r requirements/requirements.in
-mkdocs-git-revision-date-localized-plugin==0.11.1 \
-    --hash=sha256:397dae5482531c3df6a434db35d6a2eb10174a14693ec17060b9ade7fd1682e2 \
-    --hash=sha256:ce19b3af90f076d1b55b68f841059c9fcb7c9d53f93b3323f0a493492f4cc841
+mkdocs-git-revision-date-localized-plugin==1.0.1 \
+    --hash=sha256:f3e020b445e7b4fb4e58ccd46b07adecbca0f85ac1659e1a63e38b8779c81ba7 \
+    --hash=sha256:ffcf206b5108d9f729af6cd42377d2e0e25c080817fdad0119549ac924b526f3
     # via -r requirements/requirements.in
-mkdocs-material==8.1.3 \
-    --hash=sha256:b8014d8a77ba45879525e0e7619d0833d10897487a77d6697ef94240fed8c892 \
-    --hash=sha256:ee153b8130ae580acd57082af0e54d644fe2a37c62f2ec9400f77e389ac1b294
+mkdocs-material==8.2.9 \
+    --hash=sha256:c177ff180b024bc061714c9483a8d26d36e1b9fdef4be8e70e243770416fe9d7 \
+    --hash=sha256:fbe39baa57c70fdbe9d1a24c6c2d0625e255e74f22b20aff43abb64157446f4d
     # via
     #   -r requirements/requirements.in
     #   mkdocs-mermaid2-plugin
@@ -229,8 +229,8 @@ mkdocs-minify-plugin==0.5.0 \
     --hash=sha256:32d9e8fbd89327a0f4f648f517297aad344c1bad64cfde110d059bd2f2780a6d \
     --hash=sha256:487c31ae6b8b3230f56910ce6bcf5c7e6ad9a8c4f51c720a4b989f30c2b0233f
     # via -r requirements/requirements.in
-mkdocs-redirects==1.0.3 \
-    --hash=sha256:db413e1d1ef5e88d8427c0a259d72ae85e74a2b51f6cd7605c2a8db358fe340f
+mkdocs-redirects==1.0.4 \
+    --hash=sha256:27aae239feab63ba3198af95b3614275c0699707009e81bbe452f6c6cf34f5d9
     # via -r requirements/requirements.in
 packaging==21.3 \
     --hash=sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb \
@@ -322,7 +322,6 @@ six==1.16.0 \
     #   jsbeautifier
     #   libsass
     #   livereload
-    #   mkdocs-redirects
     #   python-dateutil
 smmap==5.0.0 \
     --hash=sha256:2aba19d6a040e78d8b09de5c57e96207b09ed71d8e55ce0959eeee6c8e190d94 \
