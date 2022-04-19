@@ -22,19 +22,19 @@ stages:
 #
 workflow:
   rules:
-    # # Prevent branch pipelines if an MR is open on the branch.
-    # - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push" && $CI_OPEN_MERGE_REQUESTS
-    #   when: never
+    # Prevent branch pipelines if an MR is open on the branch.
+    - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push" && $CI_OPEN_MERGE_REQUESTS
+      when: never
     # Allow merge request and scheduled pipelines.
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
     - if: '$CI_PIPELINE_SOURCE == "pipeline"'
     - if: '$CI_PIPELINE_SOURCE == "trigger"'
-    # Allow branch pipelines for the default branch, stable branches named XX.X, and review app branches.
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-    - if: '$CI_COMMIT_BRANCH == "main"'
-    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
-    - if: '$CI_COMMIT_TAG =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+    # # Allow branch pipelines for the default branch, stable branches named XX.X, and review app branches.
+    # - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    # - if: '$CI_COMMIT_BRANCH == "main"'
+    # - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+    # - if: '$CI_COMMIT_TAG =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
 
 ###############################################
 #           Docker images builds              #
