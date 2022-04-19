@@ -182,5 +182,5 @@ deploy:production:
   environment:
     name: staging
     url: https://docs.dicehub.com
-  rules:
-    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+  only:
+    - /^v?[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-.]+)?$/
