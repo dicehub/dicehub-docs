@@ -127,21 +127,11 @@ image:docs-release:
 
 
 ###############################################
-#                 Deployment                  #
+#             Deployment (Staging)            #
 ###############################################
 
-#
-# Deploy site to staging
-#
-
-deploy:staging:
-  extends:
-    - .docker_prepare
+.common_staging:
   stage: deploy
-  variables:
-    GIT_STRATEGY: none
-    IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
-    VERSION: "latest"
   script:
     - docker pull $IMAGE_NAME
     - docker run --rm
@@ -151,18 +141,38 @@ deploy:staging:
       $IMAGE_NAME
       bash -c "aws s3 sync --exact-timestamps /app/site/ s3://www-docs-staging-dicehub-com/ && aws cloudfront create-invalidation --distribution-id ${STAGING_CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'"
   dependencies:
-    - image:docs-latest
+    - image:docs-release
     - image:docs-lint-markdown
     - image:docs-lint-vale
   environment:
     name: staging
     url: https://docs.staging.dicehub.com
+
+deploy:staging-latest:
+  extends:
+    - .docker_prepare
+    - .common_staging
+  variables:
+    GIT_STRATEGY: none
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+    VERSION: latest
   only:
     - branches
 
-#
-# Deploy site to production
-#
+deploy:staging:
+  extends:
+    - .docker_prepare
+    - .common_staging
+  variables:
+    GIT_STRATEGY: none
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+  only:
+    - /^v?[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-.]+)?$/
+
+
+###############################################
+#             Deployment (Production)         #
+###############################################
 
 .common_production:
   stage: deploy
@@ -192,7 +202,7 @@ deploy:production-latest:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
     VERSION: latest
   only:
-    - 7-release-add-release-procedure
+    - dev
 
 deploy:production:
   extends:
