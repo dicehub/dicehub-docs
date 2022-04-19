@@ -40,5 +40,5 @@ RUN \
     mkdocs build --site-dir site/; \
   fi; \
   if [ -d /path/to/dir ]; then \
-    mkdocs build --site-dir site/${VERSION}; \
+    mkdocs build --site-dir site/versions/${VERSION}; \
   fi
