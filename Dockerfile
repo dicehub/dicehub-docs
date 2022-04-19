@@ -38,7 +38,6 @@ RUN \
   set -eux; \
   if [ "$VERSION" = "latest" ]; then \
     mkdocs build --site-dir site/; \
-  fi; \
-  if [ -d /path/to/dir ]; then \
+  else \
     mkdocs build --site-dir site/versions/${VERSION}; \
   fi
