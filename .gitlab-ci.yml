@@ -80,6 +80,8 @@ image:docs-lint-vale:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
   environment:
     name: registry/docs-lint-vale
+  only:
+    - branches
 
 
 #
