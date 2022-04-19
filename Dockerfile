@@ -34,10 +34,4 @@ COPY . .
 COPY versions.json site/
 
 # Build site
-RUN \
-  set -eux; \
-  if [ "$VERSION" = "latest" ]; then \
-    mkdocs build --site-dir site/; \
-  else \
-    mkdocs build --site-dir site/versions/${VERSION}; \
-  fi
+RUN mkdocs build --site-dir site/${VERSION}

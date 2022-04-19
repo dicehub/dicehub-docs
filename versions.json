@@ -1,4 +1,4 @@
 [
-  { "version": "/", "title": "0.10.4 - latest", "aliases": [""] },
-  { "version": "versions/0.10.3", "title": "0.10.3", "aliases": [""] }
+  { "version": "latest", "title": "0.10.4-beta.1", "aliases": [""] },
+  { "version": "0.10.3", "title": "0.10.3", "aliases": [""] }
 ]
