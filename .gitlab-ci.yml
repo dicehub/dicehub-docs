@@ -154,8 +154,6 @@ deploy:staging:
   environment:
     name: staging
     url: https://docs.staging.dicehub.com
-  only:
-    - branches
 
 #
 # Deploy site to production
@@ -183,5 +181,5 @@ deploy:production:
   environment:
     name: staging
     url: https://docs.dicehub.com
-  only:
-    - /^v?[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-.]+)?$/
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
