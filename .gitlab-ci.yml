@@ -22,9 +22,9 @@ stages:
 #
 workflow:
   rules:
-    # Prevent branch pipelines if an MR is open on the branch.
-    - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push" && $CI_OPEN_MERGE_REQUESTS
-      when: never
+    # # Prevent branch pipelines if an MR is open on the branch.
+    # - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push" && $CI_OPEN_MERGE_REQUESTS
+    #   when: never
     # Allow merge request and scheduled pipelines.
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
@@ -184,5 +184,6 @@ deploy:production:
   environment:
     name: staging
     url: https://docs.dicehub.com
-  only:
-    - /^v?[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-.]+)?$/
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
+    - if: '$CI_COMMIT_TAG =~ /^\d{1,2}\.\d{1,2}.\d{1,2}$/'
