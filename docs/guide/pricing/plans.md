@@ -42,7 +42,7 @@ For individuals with limited collaboration and scaling requirements.
 - You can use additional machines and storage.
 - You receive a 20 Core-hours limit for free machines per month. Any usage 
   above the limit or the use of the High Performance Machines for your calculations 
-  with more CPU cores, RAM, etc., is billed by the second.
+  with more CPU cores, disk space and RAM is billed by the second.
 - Your storage is limited to 4 GB for all projects in your namespace.
 
 ### Professional
@@ -54,7 +54,7 @@ Ideal for small and medium businesses with higher collaboration and project mana
 - You have unlimited collaboration.
 - You receive a 40 Core-hours limit for free machines per month. Any usage 
   above the limit or the use of the High Performance Machines for your calculations 
-  with more CPU cores, RAM, etc., is billed by the second.
+  with more CPU cores, disk space and RAM is billed by the second.
 - Your storage is limited to 8 GB for all projects in your namespace.
 
 ### Expert/Enterprise
@@ -66,7 +66,7 @@ For experts and organizations who require unlimited collaboration, management an
 - You have unlimited collaboration.
 - You receive a 80 Core-hours limit for free machines per month. Any usage 
   above the limit or the use of the High Performance Machines for your calculations 
-  with more CPU cores, RAM, etc., is billed by the second.
+  with more CPU cores, disk space and RAM is billed by the second.
 - Your storage is limited to 16 GB for all projects in your namespace.
 - In Enterprise plan: you can create 10 groups, 3 teams and 10 subgroups per group.
 
@@ -102,9 +102,6 @@ The following machines are available on dicehub.com:
 Storage price above the included storage limit: **€0.20/GB-month**
 
 Network traffic: **€0.20/GB**
-
-
-    
 
 ### Is multithreading enabled?
 
