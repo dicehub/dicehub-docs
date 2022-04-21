@@ -1,7 +1,5 @@
 # Templates
 
-...
-
 ## Template-based approach
 
 In dicehub your application is based on a template. A template consists of pre-defined [flows](./flows.md) and 

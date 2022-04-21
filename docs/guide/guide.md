@@ -1,16 +1,9 @@
-# Getting Started
+# Welcome
 
 Welcome to the official [dicehub](https://about.dicehub.com) documentation.
+Our documentation is a great place to find most answers regarding your experience with dicehub.
 
-## Overview
-
-| Topic                                             | Description                                                                         |
-| :------------------------------------------------ | :---------------------------------------------------------------------------------- |
-| [**Quick Start**](./quick_start.md) | A quick introduction to dicehub with a simple meshing example                                                    |
-| [**Essentials**](./essentials/namespaces.md)           | Main concepts and features explained in an understandable way for all dicehub users |
-| [**Pricing**](./pricing/plans.md)           | The current pricing structure for dicehub services |
-
----
+If you can not find what your are looking for do not hesitate to [contact us](https://dicehub.com/contact-us) so we can update the documentation.
 
 ## What is dicehub?
 

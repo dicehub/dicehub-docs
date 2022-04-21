@@ -105,7 +105,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      linenums: true
   # - pymdownx.superfences
   - pymdownx.highlight
   - pymdownx.inlinehilite
@@ -131,6 +132,7 @@ nav:
   # - Documentation: documentation/index.md
   - Guide:
     - guide/guide.md
+    - guide/overview.md
     - guide/quick_start.md
     - Essentials:
       - guide/essentials/namespaces.md
@@ -144,9 +146,9 @@ nav:
     - UI / UX:
       - guide/ui/user_dashboard_ui.md
       - guide/ui/application_ui.md
-    - Resources:
-      - guide/resources/changelog.md
-      - guide/resources/roadmap.md
+    # - Resources:
+    #   - guide/resources/changelog.md
+    #   - guide/resources/roadmap.md
   - Templates:
     - template/overview.md
     - Meshing:
