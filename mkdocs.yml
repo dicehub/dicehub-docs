@@ -132,8 +132,9 @@ nav:
   # - Documentation: documentation/index.md
   - Guide:
     - guide/guide.md
-    - guide/overview.md
     - guide/quick_start.md
+    - guide/sign_up_account.md
+    - guide/create_first_application.md
     - Essentials:
       - guide/essentials/namespaces.md
       - guide/essentials/projects.md
