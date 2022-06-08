@@ -1,6 +1,6 @@
 # Create your first application
 
-## Open project
+## Create your first project
 
 Once you have signed up you can create projects and applications. On your projects
 overview page you can already find the first project (**My First Project**) 

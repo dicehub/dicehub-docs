@@ -17,7 +17,8 @@ The dicehub documentation is divided into the following topics:
 
 To start with something simple open the following meshing example by clicking on the image below:
 
-[![Mixing elbow mesh](../assets/images/mixing_elbow_mesh.png)](https://dicehub.com/api/v1/app_preview/178 "mxing_elbow_mesh"){target="_blank"}
+[![Mixing elbow mesh](../assets/images/mixing_elbow_mesh.png){width="70%"}](https://dicehub.com/api/v1/app_preview/178 "mxing_elbow_mesh"){target="_blank"}
+
 Or click the following link: [Open example](https://dicehub.com/api/v1/app_preview/178){target="_blank"}
 
 In the **Results**-Step you can click on **Load results** and inspect the calculated mesh of the mixing elbow geometry.

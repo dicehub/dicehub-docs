@@ -31,6 +31,7 @@ The current version of dicehub can be used in the following way:
 - Creating hex-dominant meshes
 - Conducting incompressible steady state fluid flow simulations
 - Sharing your results with other simulation engineers around the world
+- Your simulations can be updated during the run
 - Collaborating with other simulation engineers in real-time
 - Running massive parallel simulations on multiple machines
 - Manipulating flows to automate your simulation workflows

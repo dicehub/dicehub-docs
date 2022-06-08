@@ -178,9 +178,9 @@ nav:
   - Tutorials:
     - tutorials/index.md
   - Development:
-    - Overview: development/index.md
+    - Overview: development/overview.md
     - Documentation:
-      - development/documentation/index.md
+      - development/documentation/documentation_style_guide.md
   # - Design:
   #   - design/index.md
   # - Resources:
