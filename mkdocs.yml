@@ -165,6 +165,7 @@ nav:
           - template/hex_dominant_mesher/main_steps/volume_refinement.md
           - template/hex_dominant_mesher/main_steps/boundary_layers.md
           - template/hex_dominant_mesher/main_steps/cell_zones.md
+          - template/hex_dominant_mesher/main_steps/advanced_options.md
   # - User documentation:
   #   - User Docs: user/index.md
   #   - Features:

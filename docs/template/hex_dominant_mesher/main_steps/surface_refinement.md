@@ -8,7 +8,6 @@
 The user can specify the level of refinement for each surface named in the STL file. Similar to the [edges refinement](./edges_refinement.md) step, the level of refinement represents the number of cells resulting from splitting an original cell by an exponent of $2$ (level $2$ means $4$ cells).
 
 !!! note
-    
     It is very important to note that not adding any surface refinement to the model makes the meshing engine ignore the added geometry altogether and output the background mesh only.
 
 ## The surface refinement menu
