@@ -5,7 +5,7 @@
   <figcaption>View of the cell zones step</figcaption>
 </figure>
 
-The cell zones step is an optional step in the [Hex-dominant mesher](/HEX-dominant%20mesher.md). It is possible to define refinement levels similar to that done in [edge](/edge_refine.md), [surface](/surface_refine.md), and [volume](/volume_refine.md) refinement steps for cells zones as well as defining cell zones.
+The cell zones step is an optional step in the Hex-dominant mesher. It is possible to define refinement levels similar to that done in [edges](./edges_refinement.md), [surface refinement](./surface_refinement.md), and [volume refinement](./volume_refinement.md) steps for cells zones as well as defining cell zones.
 
 In this menu, all the global surface (the surface entity that contains all the facets of the STL file) entities of the loaded STL files are listed. For each entity, a refinement level can be specified where the level represents the exponent of $2$ to which a cell is split into.
 
