@@ -203,7 +203,6 @@ deploy:production-latest:
     VERSION: latest
   only:
     - dev
-    - 9-mesher-add-documentation-to-mesher
 
 deploy:production:
   extends:
