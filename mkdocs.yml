@@ -105,7 +105,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      linenums: true
   # - pymdownx.superfences
   - pymdownx.highlight
   - pymdownx.inlinehilite
@@ -132,6 +133,8 @@ nav:
   - Guide:
     - guide/guide.md
     - guide/quick_start.md
+    - guide/sign_up_account.md
+    - guide/create_first_application.md
     - Essentials:
       - guide/essentials/namespaces.md
       - guide/essentials/projects.md
@@ -144,9 +147,9 @@ nav:
     - UI / UX:
       - guide/ui/user_dashboard_ui.md
       - guide/ui/application_ui.md
-    - Resources:
-      - guide/resources/changelog.md
-      - guide/resources/roadmap.md
+    # - Resources:
+    #   - guide/resources/changelog.md
+    #   - guide/resources/roadmap.md
   - Templates:
     - template/overview.md
     - Meshing:
@@ -162,6 +165,7 @@ nav:
           - template/hex_dominant_mesher/main_steps/volume_refinement.md
           - template/hex_dominant_mesher/main_steps/boundary_layers.md
           - template/hex_dominant_mesher/main_steps/cell_zones.md
+          - template/hex_dominant_mesher/main_steps/advanced_options.md
   # - User documentation:
   #   - User Docs: user/index.md
   #   - Features:
@@ -175,9 +179,9 @@ nav:
   - Tutorials:
     - tutorials/index.md
   - Development:
-    - Overview: development/index.md
+    - Overview: development/overview.md
     - Documentation:
-      - development/documentation/index.md
+      - development/documentation/documentation_style_guide.md
   # - Design:
   #   - design/index.md
   # - Resources:
