@@ -1,4 +1,4 @@
-# Hex-dominant mesher
+# Hex-dominant mesher (snappyHexMesh)
 
 <div class="h1-sub">
   Generate mesh using a background cartesian grid.
@@ -15,19 +15,19 @@ OpenFOAM (for "**Open**-source **F**ield **O**peration **A**nd **M**anipulation"
 The steps followed by the `snappyHexMesh` utility can be summarized as:
 
 1. **Background mesh is created**:  
-   Based on the parameters defined by the user, the background cartesian mesh is created. The details of the input parameters are discussed in the [Background mesh](./main_steps/background_mesh.md) step.
+   Based on the parameters defined by the user, the background cartesian mesh is created. The details of the input parameters are discussed in the [Background mesh](./background_mesh.md) step.
 1. **Cells and nodes are categorized**:  
-   Based on the geometry input (for example using an STL/OBJ file) by the user (see the [Geometries](./main_steps/geometries.md) step), the utility categorizes the cells and nodes of the background mesh according to their relative location to the boundaries of the input geometric surface or surfaces.
+   Based on the geometry input (for example using an STL/OBJ file) by the user (see the [Geometries](./geometries.md) step), the utility categorizes the cells and nodes of the background mesh according to their relative location to the boundaries of the input geometric surface or surfaces.
 1. **Computational domain is selected**:  
-   The utility identifies which of the formed domains is of interest according to the [material point](./main_steps/material_point.md) location.
+   The utility identifies which of the formed domains is of interest according to the [material point](./material_point.md) location.
 1. **Castellation is conducted**:  
    The utility retains only the cells which have roughly 50% or more of their volume inside the domain of interest. Other cells are deleted. 
 1. **Snapping is executed**:  
    The cells which are close to the boundaries of the geometric surface are split based on the snapped points from the geometric surface. The purpose of this step is to create cells that are body fitted to the geometric surface. 
    Note that this step and the previous one occur with minimal interference from the user. However, some of the parameters defined by the user can affect these processes.
 1. **Volume refinement is applied**:  
-   The generated mesh is then refined according to the setup of the [edge](./main_steps/edges_refinement.md), [surface](./main_steps/surface_refinement.md) and [volume](./main_steps/volume_refinement.md) refinement requirements.
+   The generated mesh is then refined according to the setup of the [edge](./edges_refinement.md), [surface](./surface_refinement.md) and [volume](./volume_refinement.md) refinement requirements.
 1. **Layering is performed**:  
-   Finally, the cells adjacent to the geometric surface are modified to satisfy the [boundary layer](./main_steps/boundary_layers.md) requirements. Additional layers in the boundary region are created.
+   Finally, the cells adjacent to the geometric surface are modified to satisfy the [boundary layer](./boundary_layers.md) requirements. Additional layers in the boundary region are created.
 
 [^1]: Src: [OpenFOAM entry on Wikipedia](https://en.wikipedia.org/wiki/OpenFOAM){target=_blank}

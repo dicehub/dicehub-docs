@@ -154,18 +154,17 @@ nav:
     - template/overview.md
     - Meshing:
       - Hex-dominant mesher:
-        - Overview: template/hex_dominant_mesher/index.md
-        - Main Steps:
-          - template/hex_dominant_mesher/main_steps/index.md
-          - template/hex_dominant_mesher/main_steps/geometries.md
-          - template/hex_dominant_mesher/main_steps/background_mesh.md
-          - template/hex_dominant_mesher/main_steps/material_point.md
-          - template/hex_dominant_mesher/main_steps/edges_refinement.md
-          - template/hex_dominant_mesher/main_steps/surface_refinement.md
-          - template/hex_dominant_mesher/main_steps/volume_refinement.md
-          - template/hex_dominant_mesher/main_steps/boundary_layers.md
-          - template/hex_dominant_mesher/main_steps/cell_zones.md
-          - template/hex_dominant_mesher/main_steps/advanced_options.md
+        - template/hex_dominant_mesher/index.md
+        - template/hex_dominant_mesher/main_steps.md
+        - template/hex_dominant_mesher/geometries.md
+        - template/hex_dominant_mesher/background_mesh.md
+        - template/hex_dominant_mesher/material_point.md
+        - template/hex_dominant_mesher/edges_refinement.md
+        - template/hex_dominant_mesher/surface_refinement.md
+        - template/hex_dominant_mesher/volume_refinement.md
+        - template/hex_dominant_mesher/boundary_layers.md
+        - template/hex_dominant_mesher/cell_zones.md
+        - template/hex_dominant_mesher/advanced_options.md
   # - User documentation:
   #   - User Docs: user/index.md
   #   - Features:
@@ -176,12 +175,12 @@ nav:
   #   - Resources:
   #       Terms of service: https://dicehub.com/terms-of-service
   #       Privacy policy: https://dicehub.com/privacy-policy
-  - Tutorials:
-    - tutorials/index.md
-  - Development:
-    - Overview: development/overview.md
-    - Documentation:
-      - development/documentation/documentation_style_guide.md
+  # - Tutorials:
+  #   - tutorials/index.md
+  # - Development:
+  #   - Overview: development/overview.md
+  #   - Documentation:
+  #     - development/documentation/documentation_style_guide.md
   # - Design:
   #   - design/index.md
   # - Resources:
@@ -190,7 +189,7 @@ nav:
   #       - CFD: resources/cfd_software/index.md
   #       - Bio-Engineering: resources/bio_engineering/index.md
   - About:
-      - FAQ: about/faq.md
+      # - FAQ: about/faq.md
       - Code of conduct: about/code_of_conduct.md
       - Terms of service: https://dicehub.com/terms-of-service
       - Privacy policy: https://dicehub.com/privacy-policy
