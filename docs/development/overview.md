@@ -5,4 +5,5 @@ dicehub platform.
 
 ## Content
 
-- [Documentation Style Guide](./documentation/index.md).
+- [Changelog](./changelog.md)
+- [Documentation Style Guide](./documentation_style_guide.md).
