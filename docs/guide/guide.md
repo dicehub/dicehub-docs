@@ -1,6 +1,6 @@
 # Welcome
 
-Welcome to the official [dicehub](https://about.dicehub.com) documentation.
+Welcome to the official [dicehub](https://dicehub.com) documentation.
 Our documentation is a great place to find most answers regarding your experience with dicehub.
 
 If you can not find what your are looking for do not hesitate to [contact us](https://dicehub.com/contact-us) so we can update the documentation.
