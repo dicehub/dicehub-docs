@@ -10,14 +10,12 @@ theme:
   name: material
   custom_dir: theme/overrides
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: dicehub
+    - scheme: dicehub
       primary: white
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       primary: black
       toggle:
         icon: material/weather-night
