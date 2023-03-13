@@ -190,5 +190,5 @@ nav:
   - About:
       # - FAQ: about/faq.md
       - Code of conduct: about/code_of_conduct.md
-      - Terms of service: https://dicehub.com/terms-of-service
-      - Privacy policy: https://dicehub.com/privacy-policy
+      - Terms of service: https://dicehub.com/site/terms-of-service
+      - Privacy policy: https://dicehub.com/site/privacy-policy
