@@ -175,10 +175,10 @@ nav:
   #       Privacy policy: https://dicehub.com/privacy-policy
   # - Tutorials:
   #   - tutorials/index.md
-  - Development:
+  - Changelog:
     # - Overview: development/overview.md
     - Releases:
-      - development/changelog/0.10.8.md
+      - changelog/changelog/0.10.8.md
     # - development/documentation_style_guide.md
   # - Design:
   #   - design/index.md
