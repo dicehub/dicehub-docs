@@ -140,8 +140,8 @@ nav:
       - guide/essentials/templates.md
       - guide/essentials/applications.md
       - guide/essentials/flows.md
-    - Pricing:
-      - guide/pricing/plans.md
+    # - Pricing:
+    #   - guide/pricing/plans.md
     - UI / UX:
       - guide/ui/user_dashboard_ui.md
       - guide/ui/application_ui.md
@@ -178,6 +178,7 @@ nav:
   - Changelog:
     # - Overview: development/overview.md
     - Releases:
+      - changelog/changelog/0.11.1.md
       - changelog/changelog/0.10.8.md
     # - development/documentation_style_guide.md
   # - Design:
