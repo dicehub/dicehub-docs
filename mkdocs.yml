@@ -2,7 +2,7 @@ site_name: dicehub Docs
 site_description: Documentation for the cloud based all-in-one application for simulation operations.
 site_author: dicehub Team
 site_url: https://docs.dicehub.com/
-copyright: 'Copyright &copy; 2023 dicehub'
+copyright: 'Copyright &copy; 2024 dicehub'
 repo_url: ""
 
 # Customization
@@ -46,7 +46,7 @@ extra_css:
 
 extra_javascript:
   - assets/javascripts/extra.js
-  - https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js
+  - https://unpkg.com/mermaid@10.8.0/dist/mermaid.min.js
   - assets/javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
@@ -100,9 +100,9 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.critic
   - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+  # - pymdownx.emoji:
+  #     emoji_index: !!python/name:materialx.emoji.twemoji
+  #     emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
       linenums: true
   # - pymdownx.superfences
@@ -178,6 +178,10 @@ nav:
   - Changelog:
     # - Overview: development/overview.md
     - Releases:
+      - changelog/changelog/0.13.0.md
+      - changelog/changelog/0.12.0.md
+      - changelog/changelog/0.11.3.md
+      - changelog/changelog/0.11.2.md
       - changelog/changelog/0.11.1.md
       - changelog/changelog/0.10.8.md
     # - development/documentation_style_guide.md
