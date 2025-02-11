@@ -31,7 +31,8 @@ COPY . .
 
 # Copy files for versioning
 COPY index.html site/
-COPY versions.json site/
+# COPY versions.json site/
 
 # Build site
-RUN mkdocs build --site-dir site/${VERSION}
+# RUN mkdocs build --site-dir site/${VERSION}
+RUN mkdocs build
