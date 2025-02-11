@@ -72,8 +72,8 @@ extra:
   analytics:
     provider: google
     property: G-N0MZN542M8
-  version:
-    provider: mike
+  # version:
+  #   provider: mike
   generator: false
   social:
     - icon: fontawesome/brands/twitter
